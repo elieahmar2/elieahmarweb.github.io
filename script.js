@@ -1,36 +1,15 @@
 'use strict';
 
+//Opening or closing side bar
+
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-sidebarBtn.addEventListener("click", function() { elementToggleFunc(sidebar); });
+sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
 
-const animateBars = function() {
-    const chartBars = document.querySelectorAll('.chart-bar');
-    chartBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
-    });
-};
-
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateBars();
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-
-const skillsSection = document.querySelector('.skill');
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
+//Activating Modal-testimonial
 
 const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
 const modalContainer = document.querySelector('[data-modal-container]');
@@ -57,8 +36,12 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     })
 }
 
+//Activating close button in modal-testimonial
+
 modalCloseBtn.addEventListener('click', testimonialsModalFunc);
 overlay.addEventListener('click', testimonialsModalFunc);
+
+//Activating Filter Select and filtering options
 
 const select = document.querySelector('[data-select]');
 const selectItems = document.querySelectorAll('[data-select-item]');
@@ -69,10 +52,12 @@ select.addEventListener('click', function () {elementToggleFunc(this); });
 
 for(let i = 0; i < selectItems.length; i++) {
     selectItems[i].addEventListener('click', function() {
+
         let selectedValue = this.innerText.toLowerCase();
         selectValue.innerText = this.innerText;
         elementToggleFunc(select);
         filterFunc(selectedValue);
+
     });
 }
 
@@ -90,10 +75,14 @@ const filterFunc = function (selectedValue) {
     }
 }
 
+//Enabling filter button for larger screens 
+
 let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
+    
     filterBtn[i].addEventListener('click', function() {
+
         let selectedValue = this.innerText.toLowerCase();
         selectValue.innerText = this.innerText;
         filterFunc(selectedValue);
@@ -101,8 +90,11 @@ for (let i = 0; i < filterBtn.length; i++) {
         lastClickedBtn.classList.remove('active');
         this.classList.add('active');
         lastClickedBtn = this;
+
     })
 }
+
+// Enabling Contact Form
 
 const form = document.querySelector('[data-form]');
 const formInputs = document.querySelectorAll('[data-form-input]');
@@ -118,11 +110,14 @@ for(let i = 0; i < formInputs.length; i++) {
     })
 }
 
+// Enabling Page Navigation 
+
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
 const pages = document.querySelectorAll('[data-page]');
 
 for(let i = 0; i < navigationLinks.length; i++) {
     navigationLinks[i].addEventListener('click', function() {
+        
         for(let i = 0; i < pages.length; i++) {
             if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
                 pages[i].classList.add('active');
@@ -130,19 +125,8 @@ for(let i = 0; i < navigationLinks.length; i++) {
                 window.scrollTo(0, 0);
             } else {
                 pages[i].classList.remove('active');
-                navigationLinks[i].classList.remove('active');
+                navigationLinks[i]. classList.remove('active');
             }
         }
     });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const chartBars = document.querySelectorAll('.chart-bar');
-    chartBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
-    });
-});
