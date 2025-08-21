@@ -100,6 +100,79 @@
             background: var(--smoky-black);
             color: var(--white2);
         }
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        body.rtl .info-content .title {
+            margin-left: auto;
+            margin-right: 1cm;
+        }
+        body.rtl .contact-info {
+            text-align: right;
+        }
+        body.rtl .contact-item {
+            flex-direction: row-reverse;
+        }
+        body.rtl .service-item {
+            flex-direction: row-reverse;
+        }
+        body.rtl .service-list-detailed li::before {
+            left: unset;
+            right: 0;
+        }
+        body.rtl .service-list-detailed li {
+            padding-left: unset;
+            padding-right: 20px;
+        }
+        body.rtl .timeline-list::before {
+            left: unset;
+            right: -25px;
+        }
+        body.rtl .timeline-item::before {
+            left: unset;
+            right: -37px;
+        }
+        body.rtl .timeline-list {
+            margin-left: unset;
+            margin-right: 50px;
+        }
+        body.rtl .achievement-highlight {
+            flex-direction: row-reverse;
+        }
+        body.rtl .approach-content {
+            flex-direction: row-reverse;
+        }
+        body.rtl .form-input {
+            text-align: right;
+        }
+        body.rtl .form-btn {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        body.rtl .input-wrapper {
+            grid-template-columns: 1fr;
+        }
+        body.rtl .contact-cards {
+            grid-template-columns: 1fr;
+        }
+        body.rtl .language-selector {
+            flex-direction: row-reverse;
+        }
+        body.rtl .navbar-list {
+            flex-direction: row-reverse;
+        }
+        body.rtl .navbar-link::before {
+            left: unset;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        body.rtl .info-more-btn {
+            left: -15px;
+            right: unset;
+            border-radius: 15px 0 0 0;
+        }
+
         main {
             margin: 15px 12px;
             margin-bottom: 75px;
@@ -240,8 +313,8 @@
             gap: 15px;
         }
         .info-content {
-            text-align: center; /* Center content */
-            flex-grow: 1; /* Allow it to take available space */
+            text-align: center;
+            flex-grow: 1;
         }
         .info-content .name {
             color: var(--white2);
@@ -249,7 +322,7 @@
             font-weight: var(--fw600);
             letter-spacing: -0.25px;
             margin-bottom: 10px;
-            text-align: center; /* Center the name */
+            text-align: center;
         }
         .info-content .title {
             color: var(--primary-teal);
@@ -410,15 +483,15 @@
         .language-selector {
             display: flex;
             justify-content: center;
-            gap: 10px; /* Smaller gap */
-            margin-bottom: 15px; /* Slightly smaller margin */
+            gap: 10px;
+            margin-bottom: 15px;
         }
         .language-btn {
             background: var(--eerie-black1);
             color: var(--light-gray70);
             border: 1px solid var(--jet);
-            padding: 6px 12px; /* Smaller padding */
-            border-radius: 6px; /* Smaller border-radius */
+            padding: 6px 12px;
+            border-radius: 6px;
             font-size: var(--fs8);
             font-weight: var(--fw500);
             cursor: pointer;
@@ -433,7 +506,7 @@
             background: var(--primary-teal);
             color: var(--white1);
             border-color: var(--primary-teal);
-            box-shadow: 0 0 8px rgba(13, 148, 136, 0.5); /* Smaller shadow */
+            box-shadow: 0 0 8px rgba(13, 148, 136, 0.5);
         }
         .about .article-title { 
             margin-bottom: 25px;
@@ -487,9 +560,9 @@
             font-weight: var(--fw500);
         }
         .language-percentage {
-            position: static; /* Changed from absolute */
-            transform: none; /* Removed transform */
-            margin-top: 10px; /* Added margin to separate from chart */
+            position: static;
+            transform: none;
+            margin-top: 10px;
             font-size: var(--fs5);
             font-weight: var(--fw600);
             color: var(--white1);
@@ -555,6 +628,24 @@
         .portfolio-approach {
             margin-bottom: 30px;
         }
+        .skills-chart-container {
+    position: relative;
+    height: auto;
+    min-height: 200px;
+    max-height: 400px;
+        }
+
+@media (max-width: 768px) {
+    .skills-chart-container {
+        max-height: 350px;
+        overflow: hidden;
+        }
+    
+    .skills-chart-label {
+        font-size: 12px;
+        margin-top: 10px;
+        }
+}
         .approach-title {
             margin-bottom: 20px;
         }
@@ -760,12 +851,12 @@
             color: var(--white1);
         }
         .category-icon.ai-icon {
-            background: url('https://www.svgrepo.com/show/508900/ai-artificial-intelligence.svg') no-repeat center center; /* AI sticker */
+            background: url('https://www.svgrepo.com/show/508900/ai-artificial-intelligence.svg') no-repeat center center;
             background-size: 70%;
-            background-color: var(--primary-teal); /* Fallback background color */
+            background-color: var(--primary-teal);
         }
         .category-icon.ai-icon ion-icon {
-            display: none; /* Hide ion-icon when using background image */
+            display: none;
         }
         .category-title {
             margin-bottom: 20px;
@@ -785,7 +876,7 @@
             position: relative;
         }
         .service-list-detailed li::before {
-            content: '➤';
+            content: '✔';
             position: absolute;
             left: 0;
             color: var(--primary-teal);
@@ -1078,7 +1169,7 @@
             transition: var(--transition1);
         }
         .form-btn:hover { 
-            background: var(--bg-gradient-primary1);
+            background: var(--bg-gradient-primary1); 
             color: var(--white1);
             transform: translateY(-2px);
         }
@@ -1168,9 +1259,9 @@
             }
             .sidebar.active { max-height: 600px; }
             .sidebar-info { 
-                flex-direction: column; /* Stack avatar and info content */
-                align-items: center; /* Center items horizontally */
-                gap: 15px; /* Adjust gap */
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
             .info-content .name { margin-bottom: 15px; }
             .info-content .title { padding: 8px 16px; }
@@ -1437,7 +1528,8 @@
 
                 <ul class="social-list">
                     <li class="social-item"><a href="https://wa.me/96170491573" class="social-link" target="_blank">
-            <ion-icon name="logo-whatsapp"></ion-icon></a>
+                        <ion-icon name="logo-whatsapp"></ion-icon></a>
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -1499,6 +1591,20 @@
                                 <p class="service-item-text" data-lang-key="ai_solutions_text">Expert in artificial intelligence tools and applications. I provide comprehensive AI training courses and implement cutting-edge solutions for businesses.</p>
                             </div>
                         </li>
+                        
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <ion-icon name="logo-android"></ion-icon>
+                            </div>
+        
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title" data-lang-key="apk_development_title">APK Building & Android Development</h4>
+                                <p class="service-item-text" data-lang-key="apk_development_text">             
+APK development and editing services.
+I modify Android apps and create applications from scratch based on your description, with custom design.
+            </p>
+                            </div>
+                        </li>
 
                         <li class="service-item">
                             <div class="service-icon-box">
@@ -1532,7 +1638,6 @@
                                 <p class="service-item-text" data-lang-key="web_digital_marketing_text">Complete website development with design services and strategic digital marketing across social media platforms to build strong brand presence.</p>
                             </div>
                         </li>
-
                     </ul>
                 </section>
 
@@ -1549,623 +1654,650 @@
                     </div>
                 </section>
             </article>
+<article class="resume" data-page="resume">
+    <header>
+        <h2 class="h2 article-title" data-lang-key="resume_title">Resume</h2>
+    </header>
 
-            <article class="resume" data-page="resume">
-                <header>
-                    <h2 class="h2 article-title" data-lang-key="resume_title">Resume</h2>
-                </header>
-
-                <section class="skills-section">
-                    <h3 class="h3 skills-title" data-lang-key="core_competencies_title">Core Competencies</h3>
-                    <div class="skills-chart-container">
-                        <canvas id="skillsChart" width="400" height="200"></canvas>
-                        <p class="skills-chart-label" data-lang-key="click_chart_label">Click on the chart for details</p>
-                    </div>
-                </section>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
-                        <h3 class="h3" data-lang-key="education_certifications_title">Education & Certifications</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="business_certificate_title">Business & Management Certificate</h4>
-                            <span data-lang-key="business_certificate_date">2024 - YouView London University</span>
-                            <p class="timeline-text" data-lang-key="business_certificate_text">Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.</p>
-                            <div class="certificate-links">
-                                <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Business%20&%20Management%20Certificate%209351f03.pdf" target="_blank" class="cert-link" data-lang-key="view_certificate_link">View Certificate</a>
-                                <a href="https://youview.uk/en/verifier-lauthenticite-dun-certificat/" target="_blank" class="verify-link" data-lang-key="verify_certificate_link">Verify Certificate (ID: 9351f03)</a>
-                            </div>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="ai_training_course_title">AI Tools Training Course</h4>
-                            <span data-lang-key="ai_training_course_date">2024 - EASS Europe Academy</span>
-                            <p class="timeline-text" data-lang-key="ai_training_course_text">Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.</p>
-                            <div class="certificate-links">
-                                <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Training%20Certificate.pdf" target="_blank" class="cert-link" data-lang-key="view_training_certificate_link">View Training Certificate</a>
-                            </div>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="hotel_arts_certificates_title">Hotel Arts Certificates</h4>
-                            <span data-lang-key="hotel_arts_certificates_date">BT1, BT2, BT3 - Professional Training</span>
-                            <p class="timeline-text" data-lang-key="hotel_arts_certificates_text">Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.</p>
-                            <div class="certificate-links">
-                                <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/BT%20AND%20DS%20.pdf" target="_blank" class="cert-link" data-lang-key="view_certificates_link">View Certificates</a>
-                            </div>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
-                        <h3 class="h3" data-lang-key="professional_experience_title">Professional Experience</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="freelance_consultant_title">Freelance Digital Media Consultant</h4>
-                            <span data-lang-key="freelance_consultant_date">2023 - Present | Self-Employed</span>
-                            <p class="timeline-text" data-lang-key="freelance_consultant_text">Specialized in supporting emerging businesses with comprehensive digital media solutions including website development, social media management, and content creation. Focus on providing high-quality services at competitive rates to help new ventures establish strong brand foundations and succeed in competitive markets.</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="video_designer_title">Video Designer</h4>
-                            <span data-lang-key="video_designer_date">2023 | Digital Hunters, Lebanon</span>
-                            <p class="timeline-text" data-lang-key="video_designer_text">Worked with Lebanon's leading social media marketing company as primary video designer. Specialized in creating dynamic and engaging video content for various campaigns, honing skills in professional video editing, animation, and visual storytelling for diverse client portfolios.</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-lang-key="ai_instructor_title">AI Training Instructor</h4>
-                            <span data-lang-key="ai_instructor_date">2024 | EASS Europe Academy</span>
-                            <p class="timeline-text" data-lang-key="ai_instructor_text">Delivered professional artificial intelligence training course at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge transfer capabilities and technical expertise.</p>
-                        </li>
-                    </ol>
-                </section>
-            </article>
-
-            <article class="services" data-page="services">
-                <header>
-                    <h2 class="h2 article-title" data-lang-key="service_categories_title">Service Categories</h2>
-                </header>
-
-                <section class="service-categories">
-                    <div class="category-grid">
-                        <div class="category-card">
-                            <div class="category-icon">
-                                <ion-icon name="videocam-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="video_editing_category_title">Video Editing</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="wedding_videography">Wedding Videography</li>
-                                <li data-lang-key="youtube_content">YouTube Content</li>
-                                <li data-lang-key="memes_viral_content">Memes & Viral Content</li>
-                                <li data-lang-key="instagram_reels">Instagram Reels</li>
-                                <li data-lang-key="3d_animation_reels">3D Animation Reels</li>
-                                <li data-lang-key="professional_content_production">Professional Content Production</li>
-                                <li data-lang-key="2d_advertisements">2D Advertisements</li>
-                                <li data-lang-key="light_animation">Light Animation</li>
-                                <li data-lang-key="deepfake_technology">Deepfake Technology</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-card">
-                            <div class="category-icon">
-                                <ion-icon name="image-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="graphic_design_category_title">Graphic Design</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="professional_illustrations">Professional Illustrations</li>
-                                <li data-lang-key="print_design_materials">Print Design Materials</li>
-                                <li data-lang-key="instagram_posts">Instagram Posts</li>
-                                <li data-lang-key="billboard_advertisements">Billboard Advertisements</li>
-                                <li data-lang-key="social_media_graphics">Social Media Graphics</li>
-                                <li data-lang-key="advanced_photoshop_work">Advanced Photoshop Work</li>
-                                <li data-lang-key="ai_generated_imagery">AI-Generated Imagery</li>
-                                <li data-lang-key="background_replacement">Background Replacement</li>
-                                <li data-lang-key="logo_design">Logo Design</li>
-                                <li data-lang-key="product_visualization">Product Visualization</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-card">
-                            <div class="category-icon">
-                                <ion-icon name="camera-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="photography_category_title">Photography</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="portrait_photography">Portrait Photography</li>
-                                <li data-lang-key="fixed_camera_content">Fixed Camera Content</li>
-                                <li data-lang-key="professional_headshots">Professional Headshots</li>
-                                <li data-lang-key="product_photography">Product Photography</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-card">
-                            <div class="category-icon">
-                                <ion-icon name="create-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="content_strategy_category_title">Content Strategy</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="content_writing_creation">Content Writing & Creation</li>
-                                <li data-lang-key="creative_direction_guidance">Creative Direction & Guidance</li>
-                                <li data-lang-key="script_development">Script Development</li>
-                                <li data-lang-key="lighting_setup_consultation">Lighting Setup Consultation</li>
-                                <li data-lang-key="brand_strategy_development">Brand Strategy Development</li>
-                                <li data-lang-key="social_media_management">Social Media Management</li>
-                                <li data-lang-key="community_engagement">Community Engagement</li>
-                                <li data-lang-key="influencer_collaborations">Influencer Collaborations</li>
-                                <li data-lang-key="content_calendar_planning">Content Calendar Planning</li>
-                                <li data-lang-key="performance_analytics">Performance Analytics</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-card">
-                            <div class="category-icon">
-                                <ion-icon name="code-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="web_development_category_title">Web Development</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="complete_website_design">Complete Website Design</li>
-                                <li data-lang-key="custom_development_solutions">Custom Development Solutions</li>
-                                <li data-lang-key="responsive_design">Responsive Design</li>
-                                <li data-lang-key="e_commerce_integration">E-commerce Integration</li>
-                                <li data-lang-key="seo_optimization">SEO Optimization</li>
-                                <li data-lang-key="maintenance_support">Maintenance & Support</li>
-                            </ul>
-                        </div>
-
-                        <div class="category-card">
-                            <div class="category-icon ai-icon">
-                                <ion-icon name="brain-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3 category-title" data-lang-key="ai_solutions_category_title">AI Solutions</h3>
-                            <ul class="service-list-detailed">
-                                <li data-lang-key="ai_training_courses">AI Training Courses</li>
-                                <li data-lang-key="custom_ai_implementation">Custom AI Implementation</li>
-                                <li data-lang-key="automation_solutions">Automation Solutions</li>
-                                <li data-lang-key="ai_powered_content_creation">AI-Powered Content Creation</li>
-                                <li data-lang-key="machine_learning_consulting">Machine Learning Consulting</li>
-                                <li data-lang-key="ai_tool_integration">AI Tool Integration</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article class="achievements" data-page="achievements">
-                <header>
-                    <h2 class="h2 article-title" data-lang-key="achievements_recognition_title">Achievements & Recognition</h2>
-                </header>
-
-                <section class="achievement-showcase">
-                    <div class="achievement-highlight">
-                        <div class="achievement-icon">
-                            <ion-icon name="trophy-outline"></ion-icon>
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="h3 achievement-title" data-lang-key="design_contest_winner_title">$100 Design Contest Winner</h3>
-                            <p class="achievement-description" data-lang-key="design_contest_winner_description">Won first place in a design competition hosted by content creator Mahrko, who has 4 million YouTube subscribers. Created an AI-powered music video featuring comedic scenes from his streams and atmospheric elements from his broadcasts. The project served as a marketing campaign for his Subathon event, sponsored by Kick streaming platform.</p>
-                            <div class="achievement-details">
-                                <span class="achievement-tag" data-lang-key="ai_music_video_tag">AI Music Video</span>
-                                <span class="achievement-tag" data-lang-key="audience_reach_tag">4M+ Audience Reach</span>
-                                <span class="achievement-tag" data-lang-key="kick_partnership_tag">Kick Partnership</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="achievement-stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="18">18</div>
-                            <div class="stat-label" data-lang-key="years_old_teaching_ai">Years Old Teaching AI</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="100">100%</div>
-                            <div class="stat-label" data-lang-key="client_satisfaction">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="50">50+</div>
-                            <div class="stat-label" data-lang-key="projects_completed">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="3">3+</div>
-                            <div class="stat-label" data-lang-key="years_experience">Years Experience</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="key-achievements">
-                    <h3 class="h3 section-title" data-lang-key="key_milestones_title">Key Milestones</h3>
-                    <div class="achievements-grid">
-                        <div class="achievement-card">
-                            <div class="card-icon">
-                                <ion-icon name="school-outline"></ion-icon>
-                            </div>
-                            <h4 class="h4 card-title" data-lang-key="youngest_ai_instructor_title">Youngest AI Instructor</h4>
-                            <p class="card-text" data-lang-key="youngest_ai_instructor_text">Became an AI training instructor at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge and communication skills.</p>
-                        </div>
-
-                        <div class="achievement-card">
-                            <div class="card-icon">
-                                <ion-icon name="business-outline"></ion-icon>
-                            </div>
-                            <h4 class="h4 card-title" data-lang-key="digital_hunters_collaboration_title">Digital Hunters Collaboration</h4>
-                            <p class="card-text" data-lang-key="digital_hunters_collaboration_text">Worked as primary video designer with Lebanon's leading social media marketing company, contributing to high-profile campaigns and brand development.</p>
-                        </div>
-
-                        <div class="achievement-card">
-                            <div class="card-icon">
-                                <ion-icon name="bulb-outline"></ion-icon>
-                            </div>
-                            <h4 class="h4 card-title" data-lang-key="innovation_ai_integration_title">Innovation in AI Integration</h4>
-                            <p class="card-text" data-lang-key="innovation_ai_integration_text">Pioneer in combining AI technology with creative content production, developing unique workflows that enhance productivity and creative output.</p>
-                        </div>
-
-                        <div class="achievement-card">
-                            <div class="card-icon">
-                                <ion-icon name="people-outline"></ion-icon>
-                            </div>
-                            <h4 class="h4 card-title" data-lang-key="business_development_impact_title">Business Development Impact</h4>
-                            <p class="card-text" data-lang-key="business_development_impact_text">Successfully helped numerous startups establish their digital presence and brand identity through comprehensive media solutions and strategic guidance.</p>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article class="contact" data-page="contact">
-                <header>
-                    <h2 class="h2 article-title" data-lang-key="contact_title">Contact</h2>
-                </header>
-
-                <section class="mapbox" data-mapbox>
-                    <figure>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10753.372729443832!2d36.05705995!3d34.51162065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1522237ae840a425%3A0xd33e2e4d65260420!2z2KjZg9ix2LLYp9mE2Kc!5e1!3m2!1sar!2slb!4v1753072025969!5m2!1sar!2slb"
-                         width="400" height="300" loading="lazy"></iframe>
-                    </figure>
-                </section>
-
-                <section class="contact-info-section">
-                    <h3 class="h3 section-title" data-lang-key="lets_connect_title">Let's Connect</h3>
-                    <div class="contact-cards">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="mail-outline"></ion-icon>
-                            </div>
-                            <div class="contact-details">
-                                <h4 class="h4 contact-method" data-lang-key="email_method">Email</h4>
-                                <a href="mailto:eliealahmar961@gmail.com" class="contact-value">eliealahmar961@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="call-outline"></ion-icon>
-                            </div>
-                            <div class="contact-details">
-                                <h4 class="h4 contact-method" data-lang-key="phone_method">Phone</h4>
-                                <a href="tel:+96170491573" class="contact-value">+961 70 491 573</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="location-outline"></ion-icon>
-                            </div>
-                            <div class="contact-details">
-                                <h4 class="h4 contact-method" data-lang-key="location_method">Location</h4>
-                                <span class="contact-value" data-lang-key="location_value">Bqarzela, Lebanon</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="contact-form">
-                    <h3 class="h3 form-title" data-lang-key="send_message_title">Send Message</h3>
-
-                    <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
-                        <input type="hidden" name="access_key" value="5d749da4-f0a0-4f5d-bd45-cfc884850e55">
-                        <input type="hidden" name="subject" value="New Contact Form Submission">
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                        <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input data-lang-placeholder="fullname_placeholder">
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input data-lang-placeholder="email_placeholder">
-                        </div>
-
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input data-lang-placeholder="message_placeholder"></textarea>
-
-                        <button class="form-btn" type="submit" disabled data-form-btn>
-                            <ion-icon name="paper-plane"></ion-icon>
-                            <span data-lang-key="send_message_btn">Send Message</span>
-                        </button>
-                        <div class="message-status" id="messageStatus"></div>
-                    </form>
-                </section>
-            </article>
+    <section class="skills-section">
+        <h3 class="h3 skills-title" data-lang-key="core_competencies_title">Core Competencies</h3>
+        <div class="skills-chart-container">
+            <canvas id="skillsChart" width="400" height="200"></canvas>
+            <p class="skills-chart-label" data-lang-key="click_chart_label">Click on the chart for details</p>
         </div>
-    </main>
+    </section>
 
-    <script>
-        const translations = {
-            en: {
-                about: "About",
-                resume: "Resume",
-                services: "Services",
-                achievements: "Achievements",
-                contact: "Contact",
-                about_title: "About me",
-                about_text_p1: "I'm a dynamic and innovative Digital Media & Business Development Specialist with unique expertise in artificial intelligence. At just 18 years old, I have achieved the remarkable feat of teaching AI courses, demonstrating my dedication and capacity for transferring complex knowledge.",
-                about_text_p2: "My specialization encompasses artificial intelligence, graphic design, video editing, content creation, and digital marketing. I believe that specializing in AI guarantees a place in the future, and I'm passionate about helping new businesses build solid brand foundations through high-impact digital media solutions.",
-                about_text_p3: "I work exclusively with Android-based tools and have extensive experience in AI-driven web editing, professional video production, and innovative content creation. My approach focuses on providing high-quality support at minimal cost to help ventures succeed.",
-                language_proficiency_title: "Language Proficiency",
-                arabic_language: "Arabic",
-                english_language: "English",
-                french_language: "French",
-                what_i_do_title: "What I Do",
-                ai_solutions_title: "AI Solutions & Training",
-                ai_solutions_text: "Expert in artificial intelligence tools and applications. I provide comprehensive AI training courses and implement cutting-edge solutions for businesses.",
-                video_production_title: "Video Production & Editing",
-                video_production_text: "Professional video editing including weddings, YouTube content, reels, animations, and promotional materials using advanced Android-based tools.",
-                graphic_design_title: "Graphic Design & Branding",
-                graphic_design_text: "Creative design solutions including logos, illustrations, social media posts, promotional materials, and AI-generated visuals with professional Photoshop expertise.",
-                web_digital_marketing_title: "Web Development & Digital Marketing",
-                web_digital_marketing_text: "Complete website development with design services and strategic digital marketing across social media platforms to build strong brand presence.",
-                portfolio_approach_title: "My Portfolio Approach",
-                portfolio_approach_p1: "Instead of showing a traditional portfolio, I prefer to create custom samples based on your specific needs. Simply send me a small example of what you're looking for, and I'll provide a complimentary sample that demonstrates my capabilities tailored to your requirements.",
-                portfolio_approach_p2: "This approach ensures that you can evaluate my skills directly based on your project needs, guaranteeing work that's perfectly suited to your vision.",
-                resume_title: "Resume",
-                core_competencies_title: "Core Competencies",
-                click_chart_label: "Click on the chart for details",
-                education_certifications_title: "Education & Certifications",
-                business_certificate_title: "Business & Management Certificate",
-                business_certificate_date: "2024 - YouView London University",
-                business_certificate_text: "Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.",
-                view_certificate_link: "View Certificate",
-                verify_certificate_link: "Verify Certificate (ID: 9351f03)",
-                ai_training_course_title: "AI Tools Training Course",
-                ai_training_course_date: "2024 - EASS Europe Academy",
-                ai_training_course_text: "Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.",
-                view_training_certificate_link: "View Training Certificate",
-                hotel_arts_certificates_title: "Hotel Arts Certificates",
-                hotel_arts_certificates_date: "BT1, BT2, BT3 - Professional Training",
-                hotel_arts_certificates_text: "Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.",
-                view_certificates_link: "View Certificates",
-                professional_experience_title: "Professional Experience",
-                freelance_consultant_title: "Freelance Digital Media Consultant",
-                freelance_consultant_date: "2023 - Present | Self-Employed",
-                freelance_consultant_text: "Specialized in supporting emerging businesses with comprehensive digital media solutions including website development, social media management, and content creation. Focus on providing high-quality services at competitive rates to help new ventures establish strong brand foundations and succeed in competitive markets.",
-                video_designer_title: "Video Designer",
-                video_designer_date: "2023 | Digital Hunters, Lebanon",
-                video_designer_text: "Worked with Lebanon's leading social media marketing company as primary video designer. Specialized in creating dynamic and engaging video content for various campaigns, honing skills in professional video editing, animation, and visual storytelling for diverse client portfolios.",
-                ai_instructor_title: "AI Training Instructor",
-                ai_instructor_date: "2024 | EASS Europe Academy",
-                ai_instructor_text: "Delivered professional artificial intelligence training course at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge transfer capabilities and technical expertise.",
-                service_categories_title: "Service Categories",
-                video_editing_category_title: "Video Editing",
-                wedding_videography: "Wedding Videography",
-                youtube_content: "YouTube Content",
-                memes_viral_content: "Memes & Viral Content",
-                instagram_reels: "Instagram Reels",
-                "3d_animation_reels": "3D Animation Reels",
-                professional_content_production: "Professional Content Production",
-                "2d_advertisements": "2D Advertisements",
-                light_animation: "Light Animation",
-                deepfake_technology: "Deepfake Technology",
-                graphic_design_category_title: "Graphic Design",
-                professional_illustrations: "Professional Illustrations",
-                print_design_materials: "Print Design Materials",
-                instagram_posts: "Instagram Posts",
-                billboard_advertisements: "Billboard Advertisements",
-                social_media_graphics: "Social Media Graphics",
-                advanced_photoshop_work: "Advanced Photoshop Work",
-                ai_generated_imagery: "AI-Generated Imagery",
-                background_replacement: "Background Replacement",
-                logo_design: "Logo Design",
-                product_visualization: "Product Visualization",
-                photography_category_title: "Photography",
-                portrait_photography: "Portrait Photography",
-                fixed_camera_content: "Fixed Camera Content",
-                professional_headshots: "Professional Headshots",
-                product_photography: "Product Photography",
-                content_strategy_category_title: "Content Strategy",
-                content_writing_creation: "Content Writing & Creation",
-                creative_direction_guidance: "Creative Direction & Guidance",
-                script_development: "Script Development",
-                lighting_setup_consultation: "Lighting Setup Consultation",
-                brand_strategy_development: "Brand Strategy Development",
-                social_media_management: "Social Media Management",
-                community_engagement: "Community Engagement",
-                influencer_collaborations: "Influencer Collaborations",
-                content_calendar_planning: "Content Calendar Planning",
-                performance_analytics: "Performance Analytics",
-                web_development_category_title: "Web Development",
-                complete_website_design: "Complete Website Design",
-                custom_development_solutions: "Custom Development Solutions",
-                responsive_design: "Responsive Design",
-                e_commerce_integration: "E-commerce Integration",
-                seo_optimization: "SEO Optimization",
-                maintenance_support: "Maintenance & Support",
-                ai_solutions_category_title: "AI Solutions",
-                ai_training_courses: "AI Training Courses",
-                custom_ai_implementation: "Custom AI Implementation",
-                automation_solutions: "Automation Solutions",
-                ai_powered_content_creation: "AI-Powered Content Creation",
-                machine_learning_consulting: "Machine Learning Consulting",
-                ai_tool_integration: "AI Tool Integration",
-                achievements_recognition_title: "Achievements & Recognition",
-                design_contest_winner_title: "$100 Design Contest Winner",
-                design_contest_winner_description: "Won first place in a design competition hosted by content creator Mahrko, who has 4 million YouTube subscribers. Created an AI-powered music video featuring comedic scenes from his streams and atmospheric elements from his broadcasts. The project served as a marketing campaign for his Subathon event, sponsored by Kick streaming platform.",
-                ai_music_video_tag: "AI Music Video",
-                audience_reach_tag: "4M+ Audience Reach",
-                kick_partnership_tag: "Kick Partnership",
-                years_old_teaching_ai: "Years Old Teaching AI",
-                client_satisfaction: "Client Satisfaction",
-                projects_completed: "Projects Completed",
-                years_experience: "Years Experience",
-                key_milestones_title: "Key Milestones",
-                youngest_ai_instructor_title: "Youngest AI Instructor",
-                youngest_ai_instructor_text: "Became an AI training instructor at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge and communication skills.",
-                digital_hunters_collaboration_title: "Digital Hunters Collaboration",
-                digital_hunters_collaboration_text: "Worked as primary video designer with Lebanon's leading social media marketing company, contributing to high-profile campaigns and brand development.",
-                innovation_ai_integration_title: "Innovation in AI Integration",
-                innovation_ai_integration_text: "Pioneer in combining AI technology with creative content production, developing unique workflows that enhance productivity and creative output.",
-                business_development_impact_title: "Business Development Impact",
-                business_development_impact_text: "Successfully helped numerous startups establish their digital presence and brand identity through comprehensive media solutions and strategic guidance.",
-                contact_title: "Contact",
-                lets_connect_title: "Let's Connect",
-                email_method: "Email",
-                phone_method: "Phone",
-                location_method: "Location",
-                location_value: "Bqarzela, Lebanon",
-                send_message_title: "Send Message",
-                fullname_placeholder: "Full name",
-                email_placeholder: "Email Address",
-                message_placeholder: "Your Message",
-                send_message_btn: "Send Message",
-                message_sent_success: "Message sent successfully!",
-                message_sent_error: "Failed to send message. Please try again.",
-            },
-            ar: {
-                about: "عني",
-                resume: "السيرة الذاتية",
-                services: "الخدمات",
-                achievements: "الإنجازات",
-                contact: "اتصل بي",
-                about_title: "عني",
-                about_text_p1: "أنا متخصص ديناميكي ومبتكر في الإعلام الرقمي وتطوير الأعمال، ولدي خبرة فريدة في الذكاء الاصطناعي. في سن 18 عامًا فقط، حققت إنجازًا رائعًا في تدريس دورات الذكاء الاصطناعي، مما يدل على تفاني وقدرتي على نقل المعرفة المعقدة.",
-                about_text_p2: "تخصصي يشمل الذكاء الاصطناعي، التصميم الجرافيكي، تحرير الفيديو، إنشاء المحتوى، والتسويق الرقمي. أعتقد أن التخصص في الذكاء الاصطناعي يضمن مكانًا في المستقبل، وأنا متحمس لمساعدة الشركات الناشئة على بناء أسس قوية للعلامة التجارية من خلال حلول إعلام رقمي عالية التأثير.",
-                about_text_p3: "أعمل حصريًا بأدوات تعتمد على نظام Android ولدي خبرة واسعة في تحرير الويب المدعوم بالذكاء الاصطناعي، وإنتاج الفيديو الاحترافي، وإنشاء المحتوى المبتكر. يركز نهجي على تقديم دعم عالي الجودة بأقل تكلفة لمساعدة المشاريع على النجاح.",
-                language_proficiency_title: "إتقان اللغات",
-                arabic_language: "العربية",
-                english_language: "الإنجليزية",
-                french_language: "الفرنسية",
-                what_i_do_title: "ماذا أفعل",
-                ai_solutions_title: "حلول وتدريب الذكاء الاصطناعي",
-                ai_solutions_text: "خبير في أدوات وتطبيقات الذكاء الاصطناعي. أقدم دورات تدريبية شاملة في الذكاء الاصطناعي وأنفذ حلولًا متطورة للشركات.",
-                video_production_title: "إنتاج وتحرير الفيديو",
-                video_production_text: "تحرير فيديو احترافي يشمل حفلات الزفاف، محتوى يوتيوب، مقاطع ريلز، رسوم متحركة، ومواد ترويجية باستخدام أدوات متقدمة تعتمد على نظام Android.",
-                graphic_design_title: "التصميم الجرافيكي والعلامات التجارية",
-                graphic_design_text: "حلول تصميم إبداعية تشمل الشعارات، الرسوم التوضيحية، منشورات وسائل التواصل الاجتماعي، المواد الترويجية، والمرئيات المولدة بالذكاء الاصطناعي بخبرة احترافية في الفوتوشوب.",
-                web_digital_marketing_title: "تطوير الويب والتسويق الرقمي",
-                web_digital_marketing_text: "تطوير مواقع ويب كاملة مع خدمات التصميم والتسويق الرقمي الاستراتيجي عبر منصات التواصل الاجتماعي لبناء حضور قوي للعلامة التجارية.",
-                portfolio_approach_title: "نهجي في عرض الأعمال",
-                portfolio_approach_p1: "بدلاً من عرض حافظة أعمال تقليدية، أفضل إنشاء عينات مخصصة بناءً على احتياجاتك الخاصة. ما عليك سوى إرسال مثال صغير لما تبحث عنه، وسأقدم لك عينة مجانية توضح قدراتي المصممة خصيصًا لمتطلباتك.",
-                portfolio_approach_p2: "يضمن هذا النهج أن تتمكن من تقييم مهاراتي مباشرة بناءً على احتياجات مشروعك، مما يضمن عملًا يتناسب تمامًا مع رؤيتك.",
-                resume_title: "السيرة الذاتية",
-                core_competencies_title: "الكفاءات الأساسية",
-                click_chart_label: "انقر على الرسم البياني للتفاصيل",
-                education_certifications_title: "التعليم والشهادات",
-                business_certificate_title: "شهادة إدارة الأعمال",
-                business_certificate_date: "2024 - جامعة يوفييو لندن",
-                business_certificate_text: "أكملت دورة مكثفة عبر الإنترنت تركز على إدارة الأعمال، قيادة الفريق، التعامل مع العملاء، والإدارة الاستراتيجية. عزز هذا البرنامج مهاراتي في تطوير الأعمال وعلاقات العملاء.",
-                view_certificate_link: "عرض الشهادة",
-                verify_certificate_link: "التحقق من الشهادة (المعرف: 9351f03)",
-                ai_training_course_title: "دورة تدريبية في أدوات الذكاء الاصطناعي",
-                ai_training_course_date: "2024 - أكاديمية إياس أوروبا",
-                ai_training_course_text: "قدمت دورة شاملة في الذكاء الاصطناعي تغطي أدوات وتطبيقات الذكاء الاصطناعي المتقدمة في سن 18 عامًا، مع حضور مشاركين أكبر مني سنًا. يوضح هذا الإنجاز خبرتي في تكنولوجيا الذكاء الاصطناعي وقدراتي التدريسية.",
-                view_training_certificate_link: "عرض شهادة التدريب",
-                hotel_arts_certificates_title: "شهادات الفنون الفندقية",
-                hotel_arts_certificates_date: "BT1, BT2, BT3 - تدريب احترافي",
-                hotel_arts_certificates_text: "أكملت برنامجًا شاملاً في الفنون الفندقية والإدارة يغطي فنون الطهي، التميز في الخدمة، وأساسيات إدارة الضيافة.",
-                view_certificates_link: "عرض الشهادات",
-                professional_experience_title: "الخبرة المهنية",
-                freelance_consultant_title: "مستشار إعلام رقمي مستقل",
-                freelance_consultant_date: "2023 - حتى الآن | عمل حر",
-                freelance_consultant_text: "متخصص في دعم الشركات الناشئة بحلول إعلام رقمي شاملة بما في ذلك تطوير المواقع الإلكترونية، إدارة وسائل التواصل الاجتماعي، وإنشاء المحتوى. أركز على تقديم خدمات عالية الجودة بأسعار تنافسية لمساعدة المشاريع الجديدة على بناء أسس قوية للعلامة التجارية والنجاح في الأسواق التنافسية.",
-                video_designer_title: "مصمم فيديو",
-                video_designer_date: "2023 | ديجيتال هانترز، لبنان",
-                video_designer_text: "عملت مع شركة التسويق عبر وسائل التواصل الاجتماعي الرائدة في لبنان كمصمم فيديو رئيسي. تخصصت في إنشاء محتوى فيديو ديناميكي وجذاب لمختلف الحملات، وصقلت مهاراتي في تحرير الفيديو الاحترافي، الرسوم المتحركة، وسرد القصص المرئي لمحافظ عملاء متنوعة.",
-                ai_instructor_title: "مدرب ذكاء اصطناعي",
-                ai_instructor_date: "2024 | أكاديمية إياس أوروبا",
-                ai_instructor_text: "قدمت دورة تدريبية احترافية في الذكاء الاصطناعي في سن 18 عامًا، حيث قمت بتدريس مشاركين أكبر سنًا وأكثر خبرة بشكل ملحوظ، مما يدل على قدرات استثنائية في نقل المعرفة والخبرة الفنية.",
-                service_categories_title: "فئات الخدمات",
-                video_editing_category_title: "تحرير الفيديو",
-                wedding_videography: "تصوير فيديو الزفاف",
-                youtube_content: "محتوى يوتيوب",
-                memes_viral_content: "ميمز ومحتوى فيروسي",
-                instagram_reels: "مقاطع ريلز إنستغرام",
-                "3d_animation_reels": "مقاطع ريلز رسوم متحركة ثلاثية الأبعاد",
-                professional_content_production: "إنتاج محتوى احترافي",
-                "2d_advertisements": "إعلانات ثنائية الأبعاد",
-                light_animation: "رسوم متحركة خفيفة",
-                deepfake_technology: "تقنية التزييف العميق",
-                graphic_design_category_title: "التصميم الجرافيكي",
-                professional_illustrations: "رسوم توضيحية احترافية",
-                print_design_materials: "مواد تصميم مطبوعة",
-                instagram_posts: "منشورات إنستغرام",
-                billboard_advertisements: "إعلانات لوحات إعلانية",
-                social_media_graphics: "رسومات وسائل التواصل الاجتماعي",
-                advanced_photoshop_work: "عمل فوتوشوب متقدم",
-                ai_generated_imagery: "صور مولدة بالذكاء الاصطناعي",
-                background_replacement: "استبدال الخلفية",
-                logo_design: "تصميم شعار",
-                product_visualization: "تصور المنتج",
-                photography_category_title: "التصوير الفوتوغرافي",
-                portrait_photography: "تصوير بورتريه",
-                fixed_camera_content: "محتوى الكاميرا الثابتة",
-                professional_headshots: "صور شخصية احترافية",
-                product_photography: "تصوير المنتجات",
-                content_strategy_category_title: "استراتيجية المحتوى",
-                content_writing_creation: "كتابة وإنشاء المحتوى",
-                creative_direction_guidance: "التوجيه والإرشاد الإبداعي",
-                script_development: "تطوير السيناريو",
-                lighting_setup_consultation: "استشارة إعداد الإضاءة",
-                brand_strategy_development: "تطوير استراتيجية العلامة التجارية",
-                social_media_management: "إدارة وسائل التواصل الاجتماعي",
-                community_engagement: "المشاركة المجتمعية",
-                influencer_collaborations: "تعاونات المؤثرين",
-                content_calendar_planning: "تخطيط تقويم المحتوى",
-                performance_analytics: "تحليلات الأداء",
-                web_development_category_title: "تطوير الويب",
-                complete_website_design: "تصميم موقع ويب كامل",
-                custom_development_solutions: "حلول تطوير مخصصة",
-                responsive_design: "تصميم متجاوب",
-                e_commerce_integration: "تكامل التجارة الإلكترونية",
-                seo_optimization: "تحسين محركات البحث",
-                maintenance_support: "الصيانة والدعم",
-                ai_solutions_category_title: "حلول الذكاء الاصطناعي",
-                ai_training_courses: "دورات تدريبية في الذكاء الاصطناعي",
-                custom_ai_implementation: "تطبيق الذكاء الاصطناعي المخصص",
-                automation_solutions: "حلول الأتمتة",
-                ai_powered_content_creation: "إنشاء محتوى مدعوم بالذكاء الاصطناعي",
-                machine_learning_consulting: "استشارات التعلم الآلي",
-                ai_tool_integration: "تكامل أدوات الذكاء الاصطناعي",
-                achievements_recognition_title: "الإنجازات والتقدير",
-                design_contest_winner_title: "الفائز بمسابقة التصميم 100 دولار",
-                design_contest_winner_description: "فزت بالمركز الأول في مسابقة تصميم استضافها صانع المحتوى ماركو، الذي لديه 4 ملايين مشترك على يوتيوب. أنشأت فيديو موسيقي مدعوم بالذكاء الاصطناعي يضم مشاهد كوميدية من بثوثه وعناصر جوية من بثوثه. خدم المشروع كحملة تسويقية لحدث Subathon الخاص به، برعاية منصة Kick للبث المباشر.",
-                ai_music_video_tag: "فيديو موسيقي بالذكاء الاصطناعي",
-                audience_reach_tag: "وصول إلى 4 مليون+ جمهور",
-                kick_partnership_tag: "شراكة Kick",
-                years_old_teaching_ai: "سنوات تدريس الذكاء الاصطناعي",
-                client_satisfaction: "رضا العملاء",
-                projects_completed: "المشاريع المكتملة",
-                years_experience: "سنوات الخبرة",
-                key_milestones_title: "المحطات الرئيسية",
-                youngest_ai_instructor_title: "أصغر مدرب ذكاء اصطناعي",
-                youngest_ai_instructor_text: "أصبحت مدربًا للذكاء الاصطناعي في سن 18 عامًا، حيث قمت بتدريس مشاركين أكبر سنًا وأكثر خبرة بشكل ملحوظ، مما يدل على معرفة ومهارات اتصال استثنائية.",
-                digital_hunters_collaboration_title: "تعاون ديجيتال هانترز",
-                digital_hunters_collaboration_text: "عملت كمصمم فيديو رئيسي مع شركة التسويق عبر وسائل التواصل الاجتماعي الرائدة في لبنان، وساهمت في حملات رفيعة المستوى وتطوير العلامات التجارية.",
-                innovation_ai_integration_title: "الابتكار في تكامل الذكاء الاصطناعي",
-                innovation_ai_integration_text: "رائد في الجمع بين تكنولوجيا الذكاء الاصطناعي وإنتاج المحتوى الإبداعي، وتطوير سير عمل فريدة تعزز الإنتاجية والمخرجات الإبداعية.",
-                business_development_impact_title: "تأثير تطوير الأعمال",
-                business_development_impact_text: "ساعدت بنجاح العديد من الشركات الناشئة على تأسيس حضورها الرقمي وهويتها التجارية من خلال حلول إعلامية شاملة وتوجيه استراتيجي.",
-                contact_title: "اتصل بي",
-                lets_connect_title: "دعنا نتواصل",
-                email_method: "البريد الإلكتروني",
-                phone_method: "الهاتف",
-                location_method: "الموقع",
-                location_value: "بقرزلا، لبنان",
-                send_message_title: "إرسال رسالة",
-                fullname_placeholder: "الاسم الكامل",
-                email_placeholder: "عنوان البريد الإلكتروني",
-                message_placeholder: "رسالتك",
-                send_message_btn: "إرسال رسالة",
-                message_sent_success: "تم إرسال الرسالة بنجاح!",
-                message_sent_error: "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
-            },
+    <section class="timeline">
+        <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
+            <h3 class="h3" data-lang-key="education_certifications_title">Education & Certifications</h3>
+        </div>
+
+        <ol class="timeline-list">
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="business_certificate_title">Business & Management Certificate</h4>
+                <span data-lang-key="business_certificate_date">2024 - YouView London University</span>
+                <p class="timeline-text" data-lang-key="business_certificate_text">Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.</p>
+                <div class="certificate-links">
+                    <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Business%20&%20Management%20Certificate%209351f03.pdf" target="_blank" class="cert-link" data-lang-key="view_certificate_link">View Certificate</a>
+                    <a href="https://youview.uk/en/verifier-lauthenticite-dun-certificat/" target="_blank" class="verify-link" data-lang-key="verify_certificate_link">Verify Certificate (ID: 9351f03)</a>
+                </div>
+            </li>
+
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="ai_training_course_title">AI Tools Training Course</h4>
+                <span data-lang-key="ai_training_course_date">2024 - EASS Europe Academy</span>
+                <p class="timeline-text" data-lang-key="ai_training_course_text">Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.</p>
+                <div class="certificate-links">
+                    <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Training%20Certificate.pdf" target="_blank" class="cert-link" data-lang-key="view_training_certificate_link">View Training Certificate</a>
+                </div>
+            </li>
+
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="hotel_arts_certificates_title">Hotel Arts Certificates</h4>
+                <span data-lang-key="hotel_arts_certificates_date">BT1, BT2, BT3 - Professional Training</span>
+                <p class="timeline-text" data-lang-key="hotel_arts_certificates_text">Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.</p>
+                <div class="certificate-links">
+                    <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/BT%20AND%20DS%20.pdf" target="_blank" class="cert-link" data-lang-key="view_certificates_link">View Certificates</a>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section class="timeline">
+        <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3" data-lang-key="professional_experience_title">Professional Experience</h3>
+        </div>
+
+        <ol class="timeline-list">
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="freelance_consultant_title">Freelance Digital Media Consultant</h4>
+                <span data-lang-key="freelance_consultant_date">2023 - Present | Self-Employed</span>
+                <p class="timeline-text" data-lang-key="freelance_consultant_text">Specialized in supporting emerging businesses with comprehensive digital media solutions including website development, social media management, and content creation. Focus on providing high-quality services at competitive rates to help new ventures establish strong brand foundations and succeed in competitive markets.</p>
+            </li>
+
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="video_designer_title">Video Designer</h4>
+                <span data-lang-key="video_designer_date">2023 | Digital Hunters, Lebanon</span>
+                <p class="timeline-text" data-lang-key="video_designer_text">Worked with Lebanon's leading social media marketing company as primary video designer. Specialized in creating dynamic and engaging video content for various campaigns, honing skills in professional video editing, animation, and visual storytelling for diverse client portfolios.</p>
+            </li>
+
+            <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" data-lang-key="ai_instructor_title">AI Training Instructor</h4>
+                <span data-lang-key="ai_instructor_date">2024 | EASS Europe Academy</span>
+                <p class="timeline-text" data-lang-key="ai_instructor_text">Delivered professional artificial intelligence training course at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge transfer capabilities and technical expertise.</p>
+            </li>
+        </ol>
+    </section>
+</article>
+
+<article class="services" data-page="services">
+    <header>
+        <h2 class="h2 article-title" data-lang-key="service_categories_title">Service Categories</h2>
+    </header>
+
+    <section class="service-categories">
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="videocam-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="video_editing_category_title">Video Editing</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="wedding_videography">Wedding Videography</li>
+                    <li data-lang-key="youtube_content">YouTube Content</li>
+                    <li data-lang-key="memes_viral_content">Memes & Viral Content</li>
+                    <li data-lang-key="instagram_reels">Instagram Reels</li>
+                    <li data-lang-key="3d_animation_reels">3D Animation Reels</li>
+                    <li data-lang-key="professional_content_production">Professional Content Production</li>
+                    <li data-lang-key="2d_advertisements">2D Advertisements</li>
+                    <li data-lang-key="light_animation">Light Animation</li>
+                    <li data-lang-key="deepfake_technology">Deepfake Technology</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="image-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="graphic_design_category_title">Graphic Design</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="professional_illustrations">Professional Illustrations</li>
+                    <li data-lang-key="print_design_materials">Print Design Materials</li>
+                    <li data-lang-key="instagram_posts">Instagram Posts</li>
+                    <li data-lang-key="billboard_advertisements">Billboard Advertisements</li>
+                    <li data-lang-key="social_media_graphics">Social Media Graphics</li>
+                    <li data-lang-key="advanced_photoshop_work">Advanced Photoshop Work</li>
+                    <li data-lang-key="ai_generated_imagery">AI-Generated Imagery</li>
+                    <li data-lang-key="background_replacement">Background Replacement</li>
+                    <li data-lang-key="logo_design">Logo Design</li>
+                    <li data-lang-key="product_visualization">Product Visualization</li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="logo-android"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="apk_category_title">APK Building & Development</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="apk_development">APK Development & Building</li>
+                    <li data-lang-key="apk_editing">APK Editing & Modification</li>
+                    <li data-lang-key="android_app_design">Android App Design</li>
+                    <li data-lang-key="apk_reverse_engineering">APK Reverse Engineering</li>
+                    <li data-lang-key="custom_android_solutions">Custom Android Solutions</li>
+                    <li data-lang-key="apk_signature_security">APK Signature & Security</li>
+                    <li data-lang-key="mobile_app_publishing">Mobile App Publishing</li>
+                </ul>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="camera-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="photography_category_title">Photography</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="portrait_photography">Portrait Photography</li>
+                    <li data-lang-key="fixed_camera_content">Fixed Camera Content</li>
+                    <li data-lang-key="professional_headshots">Professional Headshots</li>
+                    <li data-lang-key="product_photography">Product Photography</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="content_strategy_category_title">Content Strategy</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="content_writing_creation">Content Writing & Creation</li>
+                    <li data-lang-key="creative_direction_guidance">Creative Direction & Guidance</li>
+                    <li data-lang-key="script_development">Script Development</li>
+                    <li data-lang-key="lighting_setup_consultation">Lighting Setup Consultation</li>
+                    <li data-lang-key="brand_strategy_development">Brand Strategy Development</li>
+                    <li data-lang-key="social_media_management">Social Media Management</li>
+                    <li data-lang-key="community_engagement">Community Engagement</li>
+                    <li data-lang-key="influencer_collaborations">Influencer Collaborations</li>
+                    <li data-lang-key="content_calendar_planning">Content Calendar Planning</li>
+                    <li data-lang-key="performance_analytics">Performance Analytics</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <ion-icon name="code-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="web_development_category_title">Web Development</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="complete_website_design">Complete Website Design</li>
+                    <li data-lang-key="custom_development_solutions">Custom Development Solutions</li>
+                    <li data-lang-key="responsive_design">Responsive Design</li>
+                    <li data-lang-key="e_commerce_integration">E-commerce Integration</li>
+                    <li data-lang-key="seo_optimization">SEO Optimization</li>
+                    <li data-lang-key="maintenance_support">Maintenance & Support</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon ai-icon">
+                    <ion-icon name="apps-outline"></ion-icon>
+                </div>
+                <h3 class="h3 category-title" data-lang-key="ai_solutions_category_title">AI Solutions</h3>
+                <ul class="service-list-detailed">
+                    <li data-lang-key="ai_training_courses">AI Tools Training Courses</li>
+                    <li data-lang-key="automation_solutions">Automation Solutions</li>
+                    <li data-lang-key="ai_powered_content_creation">AI-Powered Content Creation</li>
+                    <li data-lang-key="ai_tool_integration">AI Tool Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</article>
+        <article class="achievements" data-page="achievements">
+            <header>
+                <h2 class="h2 article-title" data-lang-key="achievements_recognition_title">Achievements & Recognition</h2>
+            </header>
+
+            <section class="achievement-showcase">
+                <div class="achievement-highlight">
+                    <div class="achievement-icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="h3 achievement-title" data-lang-key="design_contest_winner_title">$100 Design Contest Winner</h3>
+                        <p class="achievement-description" data-lang-key="design_contest_winner_description">Won first place in a design competition hosted by content creator Mahrko, who has 4 million YouTube subscribers. Created an AI-powered music video featuring comedic scenes from his streams and atmospheric elements from his broadcasts. The project served as a marketing campaign for his Subathon event, sponsored by Kick streaming platform.</p>
+                        <div class="achievement-details">
+                            <span class="achievement-tag" data-lang-key="ai_music_video_tag">AI Music Video</span>
+                            <span class="achievement-tag" data-lang-key="audience_reach_tag">4M+ Audience Reach</span>
+                            <span class="achievement-tag" data-lang-key="kick_partnership_tag">Kick Partnership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="18">18</div>
+                        <div class="stat-label" data-lang-key="years_old_teaching_ai">Years Old Teaching AI</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">100%</div>
+                        <div class="stat-label" data-lang-key="client_satisfaction">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">50+</div>
+                        <div class="stat-label" data-lang-key="projects_completed">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="3">3+</div>
+                        <div class="stat-label" data-lang-key="years_experience">Years Experience</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="key-achievements">
+                <h3 class="h3 section-title" data-lang-key="key_milestones_title">Key Milestones</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="card-icon">
+                            <ion-icon name="school-outline"></ion-icon>
+                        </div>
+                        <h4 class="h4 card-title" data-lang-key="youngest_ai_instructor_title">Youngest AI Instructor</h4>
+                        <p class="card-text" data-lang-key="youngest_ai_instructor_text">Became an AI training instructor at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge and communication skills.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="card-icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </div>
+                        <h4 class="h4 card-title" data-lang-key="digital_hunters_collaboration_title">Digital Hunters Collaboration</h4>
+                        <p class="card-text" data-lang-key="digital_hunters_collaboration_text">Worked as primary video designer with Lebanon's leading social media marketing company, contributing to high-profile campaigns and brand development.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="card-icon">
+                            <ion-icon name="bulb-outline"></ion-icon>
+                        </div>
+                        <h4 class="h4 card-title" data-lang-key="innovation_ai_integration_title">Innovation in AI Integration</h4>
+                        <p class="card-text" data-lang-key="innovation_ai_integration_text">Pioneer in combining AI technology with creative content production, developing unique workflows that enhance productivity and creative output.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="card-icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </div>
+                        <h4 class="h4 card-title" data-lang-key="business_development_impact_title">Business Development Impact</h4>
+                        <p class="card-text" data-lang-key="business_development_impact_text">Successfully helped numerous startups establish their digital presence and brand identity through comprehensive media solutions and strategic guidance.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <article class="contact" data-page="contact">
+            <header>
+                <h2 class="h2 article-title" data-lang-key="contact_title">Contact</h2>
+            </header>
+
+            <section class="mapbox" data-mapbox>
+                <figure>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10753.372729443832!2d36.05705995!3d34.51162065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1522237ae840a425%3A0xd33e2e4d65260420!2z2KjZgtix2LLYp9iMINmE2KjZhtin2YY!5e1!3m2!1sar!2slb!4v17053072025969!5m2!1sar!2slb"
+                        width="400" height="300" loading="lazy"></iframe>
+                </figure>
+            </section>
+
+            <section class="contact-info-section">
+                <h3 class="h3 section-title" data-lang-key="lets_connect_title">Let's Connect</h3>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="h4 contact-method" data-lang-key="email_method">Email</h4>
+                            <a href="mailto:eliealahmar961@gmail.com" class="contact-value">eliealahmar961@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="h4 contact-method" data-lang-key="phone_method">Phone</h4>
+                            <a href="tel:+96170491573" class="contact-value">+961 70 491 573</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-details">
+                            <h4 class="h4 contact-method" data-lang-key="location_method">Location</h4>
+                            <span class="contact-value" data-lang-key="location_value">Bqarzela, Lebanon</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form">
+                <h3 class="h3 form-title" data-lang-key="send_message_title">Send Message</h3>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
+                    <input type="hidden" name="access_key" value="5d749da4-f0a0-4f5d-bd45-cfc884850e55">
+                    <input type="hidden" name="subject" value="New Contact Form Submission">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    <div class="input-wrapper">
+                        <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input data-lang-placeholder="fullname_placeholder">
+                        <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input data-lang-placeholder="email_placeholder">
+                    </div>
+
+                    <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input data-lang-placeholder="message_placeholder"></textarea>
+
+                    <button class="form-btn" type="submit" disabled data-form-btn>
+                        <ion-icon name="paper-plane"></ion-icon>
+                        <span data-lang-key="send_message_btn">Send Message</span>
+                    </button>
+                    <div class="message-status" id="messageStatus"></div>
+                </form>
+            </section>
+        </article>
+    </div>
+</main>
+
+<script>
+    const translations = {
+        en: {
+            about: "About",
+            resume: "Resume",
+            services: "Services",
+            achievements: "Achievements",
+            contact: "Contact",
+            about_title: "About me",
+            about_text_p1: "I'm a dynamic and innovative Digital Media & Business Development Specialist with unique expertise in artificial intelligence. At just 18 years old, I have achieved the remarkable feat of teaching AI courses, demonstrating my dedication and capacity for transferring complex knowledge.",
+            about_text_p2: "My specialization encompasses artificial intelligence, graphic design, video editing, content creation, and digital marketing. I believe that specializing in AI guarantees a place in the future, and I'm passionate about helping new businesses build solid brand foundations through high-impact digital media solutions.",
+            about_text_p3: "I work exclusively with Android-based tools and have extensive experience in AI-driven web editing, professional video production, and innovative content creation. My approach focuses on providing high-quality support at minimal cost to help ventures succeed.",
+            language_proficiency_title: "Language Proficiency",
+            arabic_language: "Arabic",
+            english_language: "English",
+            french_language: "French",
+            what_i_do_title: "What I Do",
+            ai_solutions_title: "AI Solutions & Training",
+            ai_solutions_text: "Expert in artificial intelligence tools and applications. I provide comprehensive AI training courses and implement cutting-edge solutions for businesses.",
+            apk_development_title: "APK Building & Android Development",
+            apk_development_text: "APK development and editing services. I modify Android apps and create applications from scratch based on your description, with custom design.",
+            video_production_title: "Video Production & Editing",
+            video_production_text: "Professional video editing including weddings, YouTube content, reels, animations, and promotional materials using advanced Android-based tools.",
+            graphic_design_title: "Graphic Design & Branding",
+            graphic_design_text: "Creative design solutions including logos, illustrations, social media posts, promotional materials, and AI-generated visuals with professional Photoshop expertise.",
+            web_digital_marketing_title: "apk building & Digital Marketing",
+            web_digital_marketing_text: "Complete website development with design services and strategic digital marketing across social media platforms to build strong brand presence.",
+            portfolio_approach_title: "My Portfolio Approach",
+            portfolio_approach_p1: "Instead of showing a traditional portfolio, I prefer to create custom samples based on your specific needs. Simply send me a small example of what you're looking for, and I'll provide a complimentary sample that demonstrates my capabilities tailored to your requirements.",
+            portfolio_approach_p2: "This approach ensures that you can evaluate my skills directly based on your project needs, guaranteeing work that's perfectly suited to your vision.",
+            resume_title: "Resume",
+            core_competencies_title: "Core Competencies",
+            click_chart_label: "Click on the chart for details",
+            education_certifications_title: "Education & Certifications",
+            business_certificate_title: "Business & Management ",
+            business_certificate_date: "2024 - YouView London University",
+            business_certificate_text: "Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.",
+            view_certificate_link: "View Certificate",
+            verify_certificate_link: "Verify Certificate (ID: 9351f03)",
+            ai_training_course_title: "AI Tools Training Course",
+            ai_training_course_date: "2024 - EASS Europe Academy",
+            ai_training_course_text: "Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.",
+            view_training_certificate_link: "View Training Certificate",
+            hotel_arts_certificates_title: "Hotel Arts Certificates",
+            hotel_arts_certificates_date: "BT1, BT2, BT3 - Professional Training",
+            hotel_arts_certificates_text: "Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.",
+            view_certificates_link: "View Certificates",
+            professional_experience_title: "Professional Experience",
+            freelance_consultant_title: "Freelance Digital Media Consultant",
+            freelance_consultant_date: "2023 - Present | Self-Employed",
+            freelance_consultant_text: "Specialized in supporting emerging businesses with comprehensive digital media solutions including website development, social media management, and content creation. Focus on providing high-quality services at competitive rates to help new ventures establish strong brand foundations and succeed in competitive markets.",
+            video_designer_title: "Video Designer",
+            video_designer_date: "2023 | Digital Hunters, Lebanon",
+            video_designer_text: "Worked with Lebanon's leading social media marketing company as primary video designer. Specialized in creating dynamic and engaging video content for various campaigns, honing skills in professional video editing, animation, and visual storytelling for diverse client portfolios.",
+            ai_instructor_title: "AI Training Instructor",
+            ai_instructor_date: "2024 | EASS Europe Academy",
+            ai_instructor_text: "Delivered professional artificial intelligence training course at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge transfer capabilities and technical expertise.",
+            service_categories_title: "Service Categories",
+            video_editing_category_title: "Video Editing",
+            wedding_videography: "Wedding Videography",
+            youtube_content: "YouTube Content",
+            memes_viral_content: "Memes & Viral Content",
+            instagram_reels: "Instagram Reels",
+            "3d_animation_reels": "3D Animation Reels",
+            professional_content_production: "Professional Content Production",
+            "2d_advertisements": "2D Advertisements",
+            light_animation: "Light Animation",
+            deepfake_technology: "Deepfake Technology",
+            graphic_design_category_title: "Graphic Design",
+            professional_illustrations: "Professional Illustrations",
+            print_design_materials: "Print Design Materials",
+            instagram_posts: "Instagram Posts",
+            billboard_advertisements: "Billboard Advertisements",
+            social_media_graphics: "Social Media Graphics",
+            advanced_photoshop_work: "Advanced Photoshop Work",
+            ai_generated_imagery: "AI-Generated Imagery",
+            background_replacement: "Background Replacement",
+            logo_design: "Logo Design",
+            product_visualization: "Product Visualization",
+            apk_category_title: "APK Building & Development",
+            apk_development: "APK Development & Building",
+            apk_editing: "APK Editing & Modification",
+            android_app_design: "Android App Design",
+            apk_reverse_engineering: "APK Reverse Engineering",
+            custom_android_solutions: "Custom Android Solutions",
+            apk_signature_security: "APK Signature & Security",
+            mobile_app_publishing: "Mobile App Publishing",
+            photography_category_title: "Photography",
+            portrait_photography: "Portrait Photography",
+            fixed_camera_content: "Fixed Camera Content",
+            professional_headshots: "Professional Headshots",
+            product_photography: "Product Photography",
+            content_strategy_category_title: "Content Strategy",
+            content_writing_creation: "Content Writing & Creation",
+            creative_direction_guidance: "Creative Direction & Guidance",
+            script_development: "Script Development",
+            lighting_setup_consultation: "Lighting Setup Consultation",
+            brand_strategy_development: "Brand Strategy Development",
+            social_media_management: "Social Media Management",
+            community_engagement: "Community Engagement",
+            influencer_collaborations: "Influencer Collaborations",
+            content_calendar_planning: "Content Calendar Planning",
+            performance_analytics: "Performance Analytics",
+            web_development_category_title: "Web Development",
+            complete_website_design: "Complete Website Design",
+            custom_development_solutions: "Custom Development Solutions",
+            responsive_design: "Responsive Design",
+            e_commerce_integration: "E-commerce Integration",
+            seo_optimization: "SEO Optimization",
+            maintenance_support: "Maintenance & Support",
+            ai_solutions_category_title: "AI tools",
+            ai_training_courses: "AI Training Courses",
+            automation_solutions: "Automation Solutions",
+            ai_powered_content_creation: "AI-Powered Content Creation",
+            ai_tool_integration: "AI Tool Integration",
+            achievements_recognition_title: "Achievements & Recognition",
+            design_contest_winner_title: "$100 Design Contest Winner",
+            design_contest_winner_description: "Won first place in a design competition hosted by content creator Mahrko, who has 4 million YouTube subscribers. Created an AI-powered music video featuring comedic scenes from his streams and atmospheric elements from his broadcasts. The project served as a marketing campaign for his Subathon event, sponsored by Kick streaming platform.",
+            ai_music_video_tag: "AI Music Video",
+            audience_reach_tag: "4M+ Audience Reach",
+            kick_partnership_tag: "Kick Partnership",
+            years_old_teaching_ai: "Years Old Teaching AI",
+            client_satisfaction: "Client Satisfaction",
+            projects_completed: "Projects Completed",
+            years_experience: "Years Experience",
+            key_milestones_title: "Key Milestones",
+            youngest_ai_instructor_title: "Youngest AI Instructor",
+            youngest_ai_instructor_text: "Became an AI training instructor at age 18, teaching participants significantly older and more experienced, demonstrating exceptional knowledge and communication skills.",
+            digital_hunters_collaboration_title: "Digital Hunters Collaboration",
+            digital_hunters_collaboration_text: "Worked as primary video designer with Lebanon's leading social media marketing company, contributing to high-profile campaigns and brand development.",
+            innovation_ai_integration_title: "Innovation in AI Integration",
+            innovation_ai_integration_text: "Pioneer in combining AI technology with creative content production, developing unique workflows that enhance productivity and creative output.",
+            business_development_impact_title: "Business Development Impact",
+            business_development_impact_text: "Successfully helped numerous startups establish their digital presence and brand identity through comprehensive media solutions and strategic guidance.",
+            contact_title: "Contact",
+            lets_connect_title: "Let's Connect",
+            email_method: "Email",
+            phone_method: "Phone",
+            location_method: "Location",
+            location_value: "Bqarzela, Lebanon",
+            send_message_title: "Send Message",
+            fullname_placeholder: "Full name",
+            email_placeholder: "Email Address",
+            message_placeholder: "Your Message",
+            send_message_btn: "Send Message",
+            message_sent_success: "Message sent successfully!",
+            message_sent_error: "Failed to send message. Please try again.",
+        },
+        ar: {
+    about: "عني",
+    resume: "السيرة الذاتية",
+    services: "الخدمات",
+    achievements: "الإنجازات",
+    contact: "اتصل بي",
+    about_title: "عني",
+    about_text_p1: "أنا متخصص ديناميكي ومبتكر في الإعلام الرقمي وتطوير الأعمال، بخبرة فريدة في الذكاء الاصطناعي. في عمر 18 عامًا فقط، حققت إنجازًا ملحوظًا بتدريس دورات الذكاء الاصطناعي، مما يدل على تفاني وقدرتي على نقل المعرفة المعقدة.",
+    about_text_p2: "تخصصي يشمل الذكاء الاصطناعي، التصميم الجرافيكي، تحرير الفيديو، إنشاء المحتوى، والتسويق الرقمي. أعتقد أن التخصص في الذكاء الاصطناعي يضمن مكانًا في المستقبل، وأنا متحمس لمساعدة الشركات الناشئة على بناء أسس قوية لعلامتها التجارية من خلال حلول إعلام رقمي عالية التأثير.",
+    about_text_p3: "أعمل حصريًا بأدوات تعتمد على نظام أندرويد ولدي خبرة واسعة في تحرير الويب المدعوم بالذكاء الاصطناعي، إنتاج الفيديو الاحترافي، وإنشاء المحتوى المبتكر. يركز نهجي على تقديم دعم عالي الجودة بأقل تكلفة لمساعدة المشاريع على النجاح.",
+    language_proficiency_title: "إتقان اللغات",
+    arabic_language: "العربية",
+    english_language: "الإنجليزية",
+    french_language: "الفرنسية",
+    what_i_do_title: "ماذا أفعل",
+    ai_solutions_title: "حلول وتدريب الذكاء الاصطناعي",
+    ai_solutions_text: "خبير في أدوات وتطبيقات الذكاء الاصطناعي. أقدم دورات تدريبية شاملة في الذكاء الاصطناعي وأنفذ حلولًا متطورة للشركات.",
+    apk_development_title: "بناء وتطوير تطبيقات APK",
+    apk_development_text: "خدمات تطوير وتعديل تطبيقات APK. أقوم بتعديل تطبيقات أندرويد وإنشاء تطبيقات من الصفر بناءً على وصفك، بتصميم مخصص.",
+    video_production_title: "إنتاج وتحرير الفيديو",
+    video_production_text: "تحرير فيديو احترافي يشمل حفلات الزفاف، محتوى يوتيوب، ريلز، رسوم متحركة، ومواد ترويجية باستخدام أدوات متقدمة تعتمد على أندroid.",
+    graphic_design_title: "التصميم الجرافيكي والعلامات التجارية",
+    graphic_design_text: "حلول تصميم إبداعية تشمل الشعارات، الرسوم التوضيحية، منشورات وسائل التواصل الاجتماعي، المواد الترويجية، والمرئيات المولدة بالذكاء الاصطناعي بخبرة فوتوشوب احترافية.",
+    web_digital_marketing_title: "تطوير الويب والتسويق الرقمي",
+    web_digital_marketing_text: "تطوير كامل لمواقع الويب مع خدمات التصميم والتسويق الرقمي الاستراتيجي عبر منصات وسائل التواصل الاجتماعي لبناء حضور قوي للعلامة التجارية.",
+    portfolio_approach_title: "نهجي في البورتفوليو",
+    portfolio_approach_p1: "بدلاً من تقديم بورتفوليو تقليدي، أفضل إنشاء عينات مخصصة بناءً على احتياجاتك المحددة. ما عليك سوى إرسال مثال صغير عما تبحث عنه، وسأقدم لك عينة مجانية توضح قدراتي المصممة خصيصًا لمتطلباتك.",
+    portfolio_approach_p2: "يضمن هذا النهج أنه يمكنك تقييم مهاراتي مباشرة بناءً على احتياجات مشروعك، مما يضمن عملًا مناسبًا تمامًا لرؤيتك.",
+    resume_title: "السيرة الذاتية",
+    core_competencies_title: "الكفاءات الأساسية",
+    click_chart_label: "انقر على الرسم البياني للتفاصيل",
+    education_certifications_title: "التعليم والشهادات",
+    business_certificate_title: "شهادة إدارة الأعمال",
+    business_certificate_date: "2024 - جامعة يوفييو لندن",
+    business_certificate_text: "أكملت دورة مكثفة عبر الإنترنت تركز على إدارة الأعمال، قيادة الفريق، مشاركة العملاء، والإدارة الاستراتيجية. عزز هذا البرنامج مهاراتي في تطوير الأعمال وعلاقات العملاء.",
+    view_certificate_link: "عرض الشهادة",
+    verify_certificate_link: "التحقق من الشهادة (ID: 9351f03)",
+    ai_training_course_title: "دورة تدريب أدوات الذكاء الاصطناعي",
+    ai_training_course_date: "2024 - أكاديمية إياس أوروبا",
+    ai_training_course_text: "قدمت دورة شاملة في الذكاء الاصطناعي تغطي أدوات وتطبيقات الذكاء الاصطناعي المتقدمة في عمر 18 عامًا، مع مشاركين أكبر مني سنًا يحضرون. يوضح هذا الإنجاز خبرتي في تكنولوجيا الذكاء الاصطناعي وقدراتي التدريسية.",
+    view_training_certificate_link: "عرض شهادة التدريب",
+    hotel_arts_certificates_title: "شهادات الفنون الفندقية",
+    hotel_arts_certificates_date: "BT1, BT2, BT3 - تدريب احترافي",
+    hotel_arts_certificates_text: "أكملت برنامجًا شاملاً للفنون الفندقية والإدارة يغطي فنون الطهي، تميز الخدمة، وأساسيات إدارة الضيافة.",
+    view_certificates_link: "عرض الشهادات",
+    professional_experience_title: "الخبرة المهنية",
+    freelance_consultant_title: "مستشار إعلام رقمي مستقل",
+    freelance_consultant_date: "2023 - حاليًا | عمل حر",
+    freelance_consultant_text: "متخصص في دعم الشركات الناشئة بحلول إعلام رقمي شاملة تشمل تطوير مواقع الويب، إدارة وسائل التواصل الاجتماعي، وإنشاء المحتوى. أركز على تقديم خدمات عالية الجودة بأسعار تنافسية لمساعدة المشاريع الجديدة على تأسيس أسق قوية للعلامة التجارية والنجاح في الأسواق التنافسية.",
+    video_designer_title: "مصمم فيديو",
+    video_designer_date: "2023 | ديجيتال هانترز، لبنان",
+    video_designer_text: "عملت مع شركة التسويق الرائدة في وسائل التواصل الاجتماعي في لبنان كمصمم فيديو رئيسي. متخصص في إنشاء محتوى فيديو ديناميكي وجذاب لمختلف الحملات، وصقل المهارات في تحرير الفيديو الاحترافي، الرسوم المتحركة، والسرد المرئي لمحافظ عملاء متنوعة.",
+    ai_instructor_title: "مدرب تدريب الذكاء الاصطناعي",
+    ai_instructor_date: "2024 | أكاديمية إياس أوروبا",
+    ai_instructor_text: "قدمت دورة تدريب احترافية في الذكاء الاصطناعي في عمر 18 عامًا، حيث قمت بتدريس مشاركين أكبر سنًا وأكثر خبرة بشكل ملحوظ، مما يدل على قدرات استثنائية في نقل المعرفة والخبرة التقنية.",
+    service_categories_title: "فئات الخدمات",
+    video_editing_category_title: "تحرير الفيديو",
+    wedding_videography: "تصوير فيديو الزفاف",
+    youtube_content: "محتوى يوتيوب",
+    memes_viral_content: "ميمز ومحتوى فيروسي",
+    instagram_reels: "ريلز انستغرام",
+    "3d_animation_reels": "ريلز الرسوم المتحركة ثلاثية الأبعاد",
+    professional_content_production: "إنتاج محتوى احترافي",
+    "2d_advertisements": "إعلانات ثنائية الأبعاد",
+    light_animation: "رسوم متحركة خفيفة",
+    deepfake_technology: "تقنية ديب فيك",
+    graphic_design_category_title: "التصميم الجرافيكي",
+    professional_illustrations: "رسوم توضيحية احترافية",
+    print_design_materials: "مواد تصميم مطبوعة",
+    instagram_posts: "منشورات انستغرام",
+    billboard_advertisements: "إعلانات لوحات الإعلانات",
+    social_media_graphics: "رسومات وسائل التواصل الاجتماعي",
+    advanced_photoshop_work: "عمل فوتوشوب متقدم",
+    ai_generated_imagery: "صور مولدة بالذكاء الاصطناعي",
+    background_replacement: "استبدال الخلفية",
+    logo_design: "تصميم شعار",
+    product_visualization: "تصور المنتجات",
+    apk_category_title: "بناء وتطوير تطبيقات APK",
+    apk_development: "تطوير وبناء تطبيقات APK",
+    apk_editing: "تحرير وتعديل تطبيقات APK",
+    android_app_design: "تصميم تطبيقات أندرويد",
+    apk_reverse_engineering: "هندسة عكسية لتطبيقات APK",
+    custom_android_solutions: "حلول أندرويد مخصصة",
+    apk_signature_security: "توقيع وأمان تطبيقات APK",
+    mobile_app_publishing: "نشر التطبيقات المحمولة",
+    photography_category_title: "التصوير الفوتوغرافي",
+    portrait_photography: "تصوير البورتريه",
+    fixed_camera_content: "محتوى الكاميرا الثابتة",
+    professional_headshots: "صور شخصية احترافية",
+    product_photography: "تصوير المنتجات",
+    content_strategy_category_title: "استراتيجية المحتوى",
+    content_writing_creation: "كتابة وإنشاء المحتوى",
+    creative_direction_guidance: "التوجيه الإبداعي والإرشاد",
+    script_development: "تطوير السيناريو",
+    lighting_setup_consultation: "استشارة إعداد الإضاءة",
+    brand_strategy_development: "تطوير استراتيجية العلامة التجارية",
+    social_media_management: "إدارة وسائل التواصل الاجتماعي",
+    community_engagement: "مشاركة المجتمع",
+    influencer_collaborations: "تعاونات المؤثرين",
+    content_calendar_planning: "تخطيط تقويم المحتوى",
+    performance_analytics: "تحليلات الأداء",
+    web_development_category_title: "تطوير الويب",
+    complete_website_design: "تصميم موقع ويب كامل",
+    custom_development_solutions: "حلول تطوير مخصصة",
+    responsive_design: "تصميم متجاوب",
+    e_commerce_integration: "تكامل التجارة الإلكترونية",
+    seo_optimization: "تحسين محركات البحث",
+    maintenance_support: "الصيانة والدعم",
+    ai_solutions_category_title: "حلول الذكاء الاصطناعي",
+    ai_training_courses: "دورات تدريب الذكاء الاصطناعي",
+    automation_solutions: "حلول الأتمتة",
+    ai_powered_content_creation: "إنشاء محتوى مدعوم بالذكاء الاصطناعي",
+    ai_tool_integration: "تكامل أدوات الذكاء الاصطناعي",
+    achievements_recognition_title: "الإنجازات والتقدير",
+    design_contest_winner_title: "الفائز بمسابقة تصميم 100$",
+    design_contest_winner_description: "فزت بالمركز الأول في مسابقة تصميم استضافها صانع المحتوى ماركو، الذي يمتلك 4 مليون مشترك على يوتيوب. أنشأت فيديو موسيقي مدعوم بالذكاء الاصطناعي يضم مشاهد كوميدية من بثوثه وعناصر جوية من بثوثه. خدم المشروع كحملة تسويقية لحدثه سوباثون، برعاية منصة كيك للبث المباشر.",
+    ai_music_video_tag: "فيديو موسيقي AI",
+    audience_reach_tag: "4M+ وصول الجمهور",
+    kick_partnership_tag: "شراكة كيك",
+    years_old_teaching_ai: "سنوات تدريس AI",
+    client_satisfaction: "رضا العملاء",
+    projects_completed: "مشاريع مكتملة",
+    years_experience: "سنوات الخبرة",
+    key_milestones_title: "المحطات الرئيسية",
+    youngest_ai_instructor_title: "أصغر مدرب AI",
+    youngest_ai_instructor_text: "أصبحت مدرب تدريب AI في عمر 18، حيث قمت بتدريس مشاركين أكبر سنًا وأكثر خبرة بشكل ملحوظ، مما يدل على معرفة ومهارات اتصال استثنائية.",
+    digital_hunters_collaboration_title: "تعاون ديجيتال هантерز",
+    digital_hunters_collaboration_text: "عملت كمصمم فيديو رئيسي مع شركة التسويق الرائدة في وسائل التواصل الاجتماعي في لبنان، مساهمًا في حملات عالية المستوى وتطوير العلامة التجارية.",
+    innovation_ai_integration_title: "الابتكار في تكامل AI",
+    innovation_ai_integration_text: "رائد في دمج تكنولوجيا AI مع إنتاج المحتوى الإبداعي، وتطوير سير عمل فريدة تعزز الإنتاجية والإخراج الإبداعي.",
+    business_development_impact_title: "تأثير تطوير الأعمال",
+    business_development_impact_text: "ساعدت بنجاح العديد من الشركات الناشئة على تأسيس حضورها الرقمي وهويتها التجارية من خلال حلول إعلامية شاملة وإرشادات استراتيجية.",
+    contact_title: "اتصل بي",
+    lets_connect_title: "لنتواصل",
+    email_method: "البريد الإلكتروني",
+    phone_method: "الهاتف",
+    location_method: "الموقع",
+    location_value: "بقرزلا، لبنان",
+    send_message_title: "إرسال رسالة",
+    fullname_placeholder: "الاسم الكامل",
+    email_placeholder: "عنوان البريد الإلكتروني",
+    message_placeholder: "رسالتك",
+    send_message_btn: "إرسال الرسالة",
+    message_sent_success: "تم إرسال الرسالة بنجاح!",
+    message_sent_error: "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+},
             fr: {
                 about: "À propos",
                 resume: "CV",
@@ -2183,6 +2315,8 @@
                 what_i_do_title: "Ce que je fais",
                 ai_solutions_title: "Solutions et formation en IA",
                 ai_solutions_text: "Expert en outils et applications d'intelligence artificielle. Je propose des cours de formation complets en IA et mets en œuvre des solutions de pointe pour les entreprises.",
+                apk_development_title: "Construction et développement d'APK",
+                apk_development_text: "Services de développement et d'édition d'APK. Je modifie les applications Android et crée des applications à partir de zéro selon votre description, avec un design personnalisé.",
                 video_production_title: "Production et montage vidéo",
                 video_production_text: "Montage vidéo professionnel incluant mariages, contenu YouTube, reels, animations et matériel promotionnel à l'aide d'outils avancés basés sur Android.",
                 graphic_design_title: "Conception graphique et image de marque",
@@ -2241,6 +2375,14 @@
                 background_replacement: "Remplacement d'arrière-plan",
                 logo_design: "Conception de logo",
                 product_visualization: "Visualisation de produits",
+                apk_category_title: "Construction et développement d'APK",
+                apk_development: "Développement et construction d'APK",
+                apk_editing: "Édition et modification d'APK",
+                android_app_design: "Conception d'applications Android",
+                apk_reverse_engineering: "Rétro-ingénierie d'APK",
+                custom_android_solutions: "Solutions Android personnalisées",
+                apk_signature_security: "Signature et sécurité d'APK",
+                mobile_app_publishing: "Publication d'applications mobiles",
                 photography_category_title: "Photographie",
                 portrait_photography: "Photographie de portrait",
                 fixed_camera_content: "Contenu de caméra fixe",
@@ -2266,14 +2408,12 @@
                 maintenance_support: "Maintenance et support",
                 ai_solutions_category_title: "Solutions d'IA",
                 ai_training_courses: "Cours de formation en IA",
-                custom_ai_implementation: "Mise en œuvre d'IA personnalisée",
                 automation_solutions: "Solutions d'automatisation",
                 ai_powered_content_creation: "Création de contenu basée sur l'IA",
-                machine_learning_consulting: "Conseil en apprentissage automatique",
                 ai_tool_integration: "Intégration d'outils d'IA",
                 achievements_recognition_title: "Réalisations et reconnaissance",
                 design_contest_winner_title: "Gagnant du concours de design de 100 $",
-                design_contest_winner_description: "J'ai remporté la première place dans un concours de design organisé par le créateur de contenu Mahrko, qui compte 4 millions d'abonnés sur YouTube. J'ai créé un clip musical alimenté par l'IA, avec des scènes comiques de ses streams et des éléments atmosphériques de ses diffusions. Le projet a servi de campagne marketing pour son événement Subathon, sponsorisé par la plateforme de streaming Kick.",
+                design_contest_winner_description: "J'ai remporté la première place dans un concès de design organisé par le créateur de contenu Mahrko, qui compte 4 millions d'abonnés sur YouTube. J'ai créé un clip musical alimenté par l'IA, avec des scènes comiques de ses streams et des éléments atmosphériques de ses diffusions. Le projet a servi de campagne marketing pour son événement Subathon, sponsorisé par la plateforme de streaming Kick.",
                 ai_music_video_tag: "Clip musical IA",
                 audience_reach_tag: "Portée de 4M+ d'audience",
                 kick_partnership_tag: "Partenariat Kick",
@@ -2327,6 +2467,12 @@
                     button.textContent = translations[currentLang][page];
                 }
             });
+
+            if (currentLang === 'ar') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
         };
 
         const elementToggleFunc = function (elem) {
@@ -2336,40 +2482,38 @@
         const sidebar = document.querySelector("[data-sidebar]");
         const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-        sidebarBtn.addEventListener("click", function () {
-            elementToggleFunc(sidebar);
-        });
+        sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-        const navigationLinks = document.querySelectorAll('[data-nav-link]');
-        const pages = document.querySelectorAll('[data-page]');
+        const navigationLinks = document.querySelectorAll("[data-nav-link]");
+        const pages = document.querySelectorAll("[data-page]");
 
         for (let i = 0; i < navigationLinks.length; i++) {
-            navigationLinks[i].addEventListener('click', function () {
-                const targetPage = this.getAttribute('data-nav-link');
+            navigationLinks[i].addEventListener("click", function () {
+                const targetPage = this.getAttribute("data-nav-link");
                 for (let j = 0; j < pages.length; j++) {
                     if (pages[j].dataset.page === targetPage) {
-                        pages[j].classList.add('active');
-                        navigationLinks[j].classList.add('active');
+                        pages[j].classList.add("active");
+                        navigationLinks[j].classList.add("active");
                         window.scrollTo(0, 0);
                     } else {
-                        pages[j].classList.remove('active');
-                        navigationLinks[j].classList.remove('active');
+                        pages[j].classList.remove("active");
+                        navigationLinks[j].classList.remove("active");
                     }
                 }
             });
         }
 
-        const form = document.querySelector('[data-form]');
-        const formInputs = document.querySelectorAll('[data-form-input]');
-        const formBtn = document.querySelector('[data-form-btn]');
+        const form = document.querySelector("[data-form]");
+        const formInputs = document.querySelectorAll("[data-form-input]");
+        const formBtn = document.querySelector("[data-form-btn]");
         const messageStatus = document.getElementById('messageStatus');
 
         for (let i = 0; i < formInputs.length; i++) {
-            formInputs[i].addEventListener('input', function () {
+            formInputs[i].addEventListener("input", function () {
                 if (form.checkValidity()) {
-                    formBtn.removeAttribute('disabled');
+                    formBtn.removeAttribute("disabled");
                 } else {
-                    formBtn.setAttribute('disabled', '');
+                    formBtn.setAttribute("disabled", "");
                 }
             });
         }
@@ -2422,7 +2566,6 @@
             }
         });
 
-
         const languageButtons = document.querySelectorAll('.language-btn');
         languageButtons.forEach(button => {
             button.addEventListener('click', function() {
@@ -2437,7 +2580,7 @@
             initLanguageCharts();
             initSkillsChart();
             initCounters();
-            updateContent(); // Initial content update
+            updateContent();
         });
 
         function initLanguageCharts() {
@@ -2509,107 +2652,151 @@
             }
         }
 
-        function initSkillsChart() {
-            const skillsCtx = document.getElementById('skillsChart');
-            if (!skillsCtx) return;
+function initSkillsChart() {
+    const skillsCtx = document.getElementById('skillsChart');
+    if (!skillsCtx) return;
 
-            new Chart(skillsCtx, {
-                type: 'bar',
-                data: {
-                    labels: [
-                        'Video Editing',
-                        'Web Development',
-                        'AI Tools',
-                        'Business Strategy',
-                        'Photography',
-                        'Content Creation',
-                        'Digital Marketing',
-                        'Graphic Design'
-                    ],
-                    datasets: [{
-                        label: 'Skill Level',
-                        data: [90, 85, 80, 75, 70, 70, 70, 67],
-                        backgroundColor: [
-                            'rgba(13, 148, 136, 0.8)',
-                            'rgba(16, 185, 129, 0.8)',
-                            'rgba(249, 115, 22, 0.8)',
-                            'rgba(236, 185, 75, 0.8)',
-                            'rgba(139, 92, 246, 0.8)',
-                            'rgba(20, 184, 166, 0.8)',
-                            'rgba(244, 63, 94, 0.8)',
-                            'rgba(59, 130, 246, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(13, 148, 136, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(249, 115, 22, 1)',
-                            'rgba(236, 185, 75, 1)',
-                            'rgba(139, 92, 246, 1)',
-                            'rgba(20, 184, 166, 1)',
-                            'rgba(244, 63, 94, 1)',
-                            'rgba(59, 130, 246, 1)'
-                        ],
-                        borderWidth: 1,
-                        borderRadius: 6
-                    }]
+    const isMobile = window.innerWidth <= 768;
+    const chartHeight = isMobile ? 500 : 350; // زيادة الارتفاع بشكل ملحوظ
+    
+    skillsCtx.height = chartHeight;
+
+    new Chart(skillsCtx, {
+        type: 'bar',
+        data: {
+            labels: [
+                translations[currentLang].video_editing_category_title,
+                translations[currentLang].web_development_category_title,
+                translations[currentLang].ai_solutions_category_title,
+                translations[currentLang].business_certificate_title,
+                translations[currentLang].photography_category_title,
+                translations[currentLang].content_strategy_category_title,
+                translations[currentLang].web_digital_marketing_title,
+                translations[currentLang].graphic_design_category_title
+            ],
+            datasets: [{
+                label: translations[currentLang]?.skill_level || 'Skill Level',
+                data: [90, 85, 80, 75, 70, 70, 70, 67],
+                backgroundColor: [
+                    'rgba(13, 148, 136, 0.9)',
+                    'rgba(16, 185, 129, 0.9)',
+                    'rgba(249, 115, 22, 0.9)',
+                    'rgba(236, 185, 75, 0.9)',
+                    'rgba(139, 92, 246, 0.9)',
+                    'rgba(20, 184, 166, 0.9)',
+                    'rgba(244, 63, 94, 0.9)',
+                    'rgba(59, 130, 246, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(13, 148, 136, 1)',
+                    'rgba(16, 185, 129, 1)',
+                    'rgba(249, 115, 22, 1)',
+                    'rgba(236, 185, 75, 1)',
+                    'rgba(139, 92, 246, 1)',
+                    'rgba(20, 184, 166, 1)',
+                    'rgba(244, 63, 94, 1)',
+                    'rgba(59, 130, 246, 1)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+                barPercentage: 0.6,
+                categoryPercentage: 0.8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    top: 20,
+                    right: 20,
+                    bottom: 10,
+                    left: 10
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
+                tooltip: {
+                    backgroundColor: '#1F2937',
+                    titleColor: '#F9FAFB',
+                    bodyColor: '#F9FAFB',
+                    borderColor: '#0D9488',
+                    borderWidth: 2,
+                    cornerRadius: 8,
+                    padding: 12,
+                    displayColors: false,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
                         },
-                        tooltip: {
-                            backgroundColor: '#1F2937',
-                            titleColor: '#F9FAFB',
-                            bodyColor: '#F9FAFB',
-                            borderColor: '#0D9488',
-                            borderWidth: 1,
-                            cornerRadius: 8,
-                            displayColors: false,
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.parsed.y}% Proficiency`;
-                                }
-                            }
+                        label: function(context) {
+                            return `${context.parsed.y}% ${translations[currentLang]?.proficiency || 'Proficiency'}`;
                         }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            grid: {
-                                color: '#374151',
-                                lineWidth: 1
-                            },
-                            ticks: {
-                                color: '#6B7280',
-                                font: {
-                                    size: 12
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                color: '#F9FAFB',
-                                font: {
-                                    size: 12,
-                                    weight: '500'
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        duration: 2000,
-                        easing: 'easeOutQuart'
                     }
                 }
-            });
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    grid: {
+                        color: '#374151',
+                        lineWidth: 1,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: '#6B7280',
+                        font: {
+                            size: isMobile ? 11 : 13,
+                            family: "'Inter', 'sans-serif'"
+                        },
+                        stepSize: 20,
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#F9FAFB',
+                        font: {
+                            size: isMobile ? 10 : 12,
+                            weight: '600',
+                            family: "'Inter', 'sans-serif'"
+                        },
+                        maxRotation: isMobile ? 45 : 0,
+                        minRotation: isMobile ? 45 : 0
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart',
+                onComplete: function() {
+                    this.data.datasets[0].backgroundColor.forEach((color, index) => {
+                        const meta = this.getDatasetMeta(0);
+                        const element = meta.data[index];
+                        if (element) {
+                        }
+                    });
+                }
+            }
         }
+    });
+}
+
+window.addEventListener('resize', function() {
+    const chart = Chart.getChart('skillsChart');
+    if (chart) {
+        chart.destroy();
+        initSkillsChart();
+    }
+});
 
         function initCounters() {
             const counters = document.querySelectorAll('[data-count]');
@@ -2635,11 +2822,16 @@
                             const current = Math.round(target * easeOutQuart);
 
                             counter.textContent = current + (counter.textContent.includes('%') ? '%' : '');
-
                             if (progress < 1) {
                                 requestAnimationFrame(animate);
                             } else {
-                                counter.textContent = target + (target === 100 && counter.closest('.stat-item') && counter.closest('.stat-item').querySelector('.stat-label').textContent.includes('Client') ? '%' : counter.textContent.includes('+') ? '+' : '');
+                                let finalValue = target;
+                                if (target === 100 && counter.closest('.stat-item') && counter.closest('.stat-item').querySelector('.stat-label').textContent.includes('Client')) {
+                                    finalValue = '100%';
+                                } else if (counter.textContent.includes('+')) {
+                                    finalValue += '+';
+                                }
+                                counter.textContent = finalValue;
                             }
                         };
 
@@ -2776,7 +2968,7 @@
             }
         });
 
-        console.log('✨ Elie Al Ahmar - Digital Media & AI Specialist Portfolio Loaded Successfully!');
+        console.log('✔ Elie Al Ahmar - Digital Media & AI Specialist Portfolio Loaded Successfully!');
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
