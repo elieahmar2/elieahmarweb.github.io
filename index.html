@@ -1680,7 +1680,7 @@ I modify Android apps and create applications from scratch based on your descrip
                 <p class="timeline-text" data-lang-key="business_certificate_text">Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.</p>
                 <div class="certificate-links">
                     <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Business%20&%20Management%20Certificate%209351f03.pdf" target="_blank" class="cert-link" data-lang-key="view_certificate_link">View Certificate</a>
-                    <a href="https://youview.uk/en/verifier-lauthenticite-dun-certificat/" target="_blank" class="verify-link" data-lang-key="verify_certificate_link">Verify Certificate (ID: 9351f03)</a>
+                    <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Training%20Certificate.pdf" target="_blank" class="verify-link" data-lang-key="verify_certificate_link">View verify Certificate</a>
                 </div>
             </li>
 
@@ -1688,13 +1688,9 @@ I modify Android apps and create applications from scratch based on your descrip
                 <h4 class="h4 timeline-item-title" data-lang-key="ai_training_course_title">AI Tools Training Course</h4>
                 <span data-lang-key="ai_training_course_date">2024 - EASS Europe Academy</span>
                 <p class="timeline-text" data-lang-key="ai_training_course_text">Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.</p>
-                <div class="certificate-links">
-                    <a href="https://github.com/elieahmar2/elieahmarweb.github.io/raw/refs/heads/main/Training%20Certificate.pdf" target="_blank" class="cert-link" data-lang-key="view_training_certificate_link">View Training Certificate</a>
-                </div>
-            </li>
 
             <li class="timeline-item">
-                <h4 class="h4 timeline-item-title" data-lang-key="hotel_arts_certificates_title">Hotel Arts Certificates</h4>
+                <h4 class="h4 timeline-item-title" data-lang-key="hotel_arts_certificates_title">Hotel Management Certificates</h4>
                 <span data-lang-key="hotel_arts_certificates_date">BT1, BT2, BT3 - Professional Training</span>
                 <p class="timeline-text" data-lang-key="hotel_arts_certificates_text">Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.</p>
                 <div class="certificate-links">
@@ -2029,7 +2025,7 @@ I modify Android apps and create applications from scratch based on your descrip
             video_production_text: "Professional video editing including weddings, YouTube content, reels, animations, and promotional materials using advanced Android-based tools.",
             graphic_design_title: "Graphic Design & Branding",
             graphic_design_text: "Creative design solutions including logos, illustrations, social media posts, promotional materials, and AI-generated visuals with professional Photoshop expertise.",
-            web_digital_marketing_title: "apk building & Digital Marketing",
+            web_digital_marketing_title: "Digital Marketing",
             web_digital_marketing_text: "Complete website development with design services and strategic digital marketing across social media platforms to build strong brand presence.",
             portfolio_approach_title: "My Portfolio Approach",
             portfolio_approach_p1: "Instead of showing a traditional portfolio, I prefer to create custom samples based on your specific needs. Simply send me a small example of what you're looking for, and I'll provide a complimentary sample that demonstrates my capabilities tailored to your requirements.",
@@ -2038,16 +2034,16 @@ I modify Android apps and create applications from scratch based on your descrip
             core_competencies_title: "Core Competencies",
             click_chart_label: "Click on the chart for details",
             education_certifications_title: "Education & Certifications",
-            business_certificate_title: "Business & Management ",
+            business_certificate_title: "Business Management",
             business_certificate_date: "2024 - YouView London University",
             business_certificate_text: "Completed intensive online course focused on business management, team leadership, client engagement, and strategic management. This program enhanced my skills in business development and client relations.",
             view_certificate_link: "View Certificate",
-            verify_certificate_link: "Verify Certificate (ID: 9351f03)",
+            verify_certificate_link: "View verify Certificate",
             ai_training_course_title: "AI Tools Training Course",
             ai_training_course_date: "2024 - EASS Europe Academy",
             ai_training_course_text: "Delivered comprehensive artificial intelligence course covering advanced AI tools and applications at age 18, with participants older than myself attending. This achievement demonstrates my expertise in AI technology and teaching abilities.",
             view_training_certificate_link: "View Training Certificate",
-            hotel_arts_certificates_title: "Hotel Arts Certificates",
+            hotel_arts_certificates_title: "Hotel Management Certificates",
             hotel_arts_certificates_date: "BT1, BT2, BT3 - Professional Training",
             hotel_arts_certificates_text: "Completed comprehensive hotel arts and management program covering culinary arts, service excellence, and hospitality management fundamentals.",
             view_certificates_link: "View Certificates",
@@ -2107,14 +2103,14 @@ I modify Android apps and create applications from scratch based on your descrip
             influencer_collaborations: "Influencer Collaborations",
             content_calendar_planning: "Content Calendar Planning",
             performance_analytics: "Performance Analytics",
-            web_development_category_title: "Web Development",
+            web_development_category_title: "Web dev & apk build",
             complete_website_design: "Complete Website Design",
             custom_development_solutions: "Custom Development Solutions",
             responsive_design: "Responsive Design",
             e_commerce_integration: "E-commerce Integration",
             seo_optimization: "SEO Optimization",
             maintenance_support: "Maintenance & Support",
-            ai_solutions_category_title: "AI tools",
+            ai_solutions_category_title: "All about AI tools",
             ai_training_courses: "AI Training Courses",
             automation_solutions: "Automation Solutions",
             ai_powered_content_creation: "AI-Powered Content Creation",
@@ -2657,7 +2653,7 @@ function initSkillsChart() {
     if (!skillsCtx) return;
 
     const isMobile = window.innerWidth <= 768;
-    const chartHeight = isMobile ? 500 : 350; // زيادة الارتفاع بشكل ملحوظ
+    const chartHeight = isMobile ? 180 : 140;
     
     skillsCtx.height = chartHeight;
 
@@ -2708,10 +2704,10 @@ function initSkillsChart() {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    top: 20,
-                    right: 20,
-                    bottom: 10,
-                    left: 10
+                    top: 10,
+                    right: 10,
+                    bottom: 5,
+                    left: 5
                 }
             },
             plugins: {
@@ -2725,7 +2721,7 @@ function initSkillsChart() {
                     borderColor: '#0D9488',
                     borderWidth: 2,
                     cornerRadius: 8,
-                    padding: 12,
+                    padding: 8,
                     displayColors: false,
                     callbacks: {
                         title: function(tooltipItems) {
@@ -2749,7 +2745,7 @@ function initSkillsChart() {
                     ticks: {
                         color: '#6B7280',
                         font: {
-                            size: isMobile ? 11 : 13,
+                            size: isMobile ? 8 : 9,
                             family: "'Inter', 'sans-serif'"
                         },
                         stepSize: 20,
@@ -2765,7 +2761,7 @@ function initSkillsChart() {
                     ticks: {
                         color: '#F9FAFB',
                         font: {
-                            size: isMobile ? 10 : 12,
+                            size: isMobile ? 7 : 8,
                             weight: '600',
                             family: "'Inter', 'sans-serif'"
                         },
@@ -2775,15 +2771,13 @@ function initSkillsChart() {
                 }
             },
             animation: {
-                duration: 2000,
-                easing: 'easeOutQuart',
-                onComplete: function() {
-                    this.data.datasets[0].backgroundColor.forEach((color, index) => {
-                        const meta = this.getDatasetMeta(0);
-                        const element = meta.data[index];
-                        if (element) {
-                        }
-                    });
+                duration: 0
+            },
+            transitions: {
+                active: {
+                    animation: {
+                        duration: 0
+                    }
                 }
             }
         }
