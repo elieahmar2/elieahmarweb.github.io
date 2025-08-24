@@ -445,24 +445,30 @@
       };
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const introAnimation = intro();
-      introAnimation.animateLogo(gsap.timeline());
-      introAnimation.animateWords(gsap.timeline());
-      introAnimation.animateBackground(gsap.timeline());
+document.addEventListener('DOMContentLoaded', () => {
+  const introAnimation = intro();
+  introAnimation.animateLogo(gsap.timeline());
+  introAnimation.animateWords(gsap.timeline());
+  introAnimation.animateBackground(gsap.timeline());
 
-      setTimeout(() => {
-        window.location.href = 'details.html';
-      }, 5100);
-    });
+  
+  const isGooglebot = /googlebot/i.test(navigator.userAgent);
 
-    window.addEventListener('wheel', e => {
-      e.preventDefault();
-    }, { passive: false });
+  if (!isGooglebot) {
+    
+    setTimeout(() => {
+      window.location.href = 'details.html';
+    }, 5100);
+  }
+});
 
-    window.addEventListener('touchmove', e => {
-      e.preventDefault();
-    }, { passive: false });
-  </script>
+window.addEventListener('wheel', e => {
+  e.preventDefault();
+}, { passive: false });
+
+window.addEventListener('touchmove', e => {
+  e.preventDefault();
+}, { passive: false });
+</script>
 </body>
 </html>
