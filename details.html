@@ -1371,6 +1371,15 @@
             .service-list {
                 grid-template-columns: 1fr;
             }
+            /* إصلاح مشكلة العناوين المختفية على الديسكتوب */
+            article {
+                padding-top: 80px; /* إضافة مساحة في الأعلى للعناوين */
+            }
+            .article-title {
+                margin-top: 0; /* التأكد من عدم وجود margin إضافي */
+                position: relative;
+                z-index: 10; /* التأكد من ظهور العنوان فوق العناصر الأخرى */
+            }
         }
         @media (min-width: 1250px) {
             body::-webkit-scrollbar { width: 20px; }
@@ -1450,6 +1459,10 @@
             }
             .contact-cards {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            /* إصلاح إضافي للشاشات الكبيرة جداً */
+            article {
+                padding-top: 100px; /* مساحة أكبر للعناوين */
             }
         }
     </style>
