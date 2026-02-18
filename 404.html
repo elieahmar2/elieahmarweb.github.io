@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Elie Ahmar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        :root {
+            --bg-gradient-jet: linear-gradient(to bottom right, hsla(180, 26%, 12%, .251) 3%, hsla(180, 15%, 8%, 0) 100%), hsl(180, 15%, 10%);
+            --jet: hsl(180, 15%, 15%);
+            --smoky-black: hsl(180, 15%, 5%);
+            --white2: hsl(0, 0%, 98%);
+            --primary-teal: hsl(166, 76%, 37%);
+            --secondary-coral: hsl(24, 95%, 53%);
+            --ff-inter: 'Inter', sans-serif;
+            --shadow2: 0px 16px 30px hsla(180, 15%, 0%, .35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--smoky-black);
+            color: var(--white2);
+            font-family: var(--ff-inter);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: var(--primary-teal);
+            text-shadow: 0 0 10px var(--primary-teal), 0 0 20px var(--primary-teal);
+            animation: dance 1.5s infinite alternate ease-in-out, glow 2s infinite alternate;
+        }
+
+        @keyframes dance {
+            0% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            50% { transform: translateY(0) rotate(5deg); }
+            75% { transform: translateY(-10px) rotate(-3deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px var(--primary-teal), 0 0 20px var(--primary-teal); }
+            to { text-shadow: 0 0 20px var(--secondary-coral), 0 0 40px var(--secondary-coral); color: var(--secondary-coral); }
+        }
+
+        .message {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        /* Game Styles */
+        #game-container {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            height: 150px;
+            border-bottom: 2px solid var(--primary-teal);
+            position: relative;
+            margin: 20px auto;
+            background: var(--bg-gradient-jet);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow2);
+        }
+
+        #dino {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-teal);
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--primary-teal);
+        }
+
+        .cactus {
+            width: 15px;
+            height: 30px;
+            background-color: var(--secondary-coral);
+            position: absolute;
+            bottom: 0;
+            left: 600px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--secondary-coral);
+        }
+
+        .jump {
+            animation: jump 0.5s linear;
+        }
+
+        @keyframes jump {
+            0% { bottom: 0; }
+            30% { bottom: 100px; }
+            70% { bottom: 100px; }
+            100% { bottom: 0; }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        .instructions {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--primary-teal);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <div class="error-code">404</div>
+        <div class="message">Oops! Page Not Found</div>
+        <div class="instructions" id="game-hint">Press SPACE to Jump!</div>
+    </div>
+
+    <div id="game-container">
+        <div id="dino"></div>
+    </div>
+
+    <div class="footer">
+        elie ahmar site 2026
+    </div>
+
+    <script>
+        const dino = document.getElementById("dino");
+        const gameContainer = document.getElementById("game-container");
+        const mainContent = document.getElementById("main-content");
+        const gameHint = document.getElementById("game-hint");
+        let isGameOver = false;
+
+        // Show game after 4 seconds
+        setTimeout(() => {
+            gameContainer.style.display = "block";
+            gameHint.style.display = "block";
+            startGame();
+        }, 4000);
+
+        function jump() {
+            if (dino.classList != "jump") {
+                dino.classList.add("jump");
+                setTimeout(function () {
+                    dino.classList.remove("jump");
+                }, 500);
+            }
+        }
+
+        function startGame() {
+            let cactusInterval = setInterval(function () {
+                if (isGameOver) {
+                    clearInterval(cactusInterval);
+                    return;
+                }
+
+                let cactus = document.createElement("div");
+                cactus.classList.add("cactus");
+                gameContainer.appendChild(cactus);
+
+                let cactusLeft = 600;
+                let moveCactus = setInterval(function () {
+                    if (isGameOver) {
+                        clearInterval(moveCactus);
+                        return;
+                    }
+                    
+                    cactusLeft -= 5;
+                    cactus.style.left = cactusLeft + "px";
+
+                    let dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
+                    
+                    // Collision detection
+                    if (cactusLeft < 80 && cactusLeft > 50 && dinoBottom < 30) {
+                        isGameOver = true;
+                        clearInterval(moveCactus);
+                        clearInterval(cactusInterval);
+                        alert("Game Over! Redirecting to details.html...");
+                        window.location.href = "details.html";
+                    }
+
+                    if (cactusLeft < -20) {
+                        clearInterval(moveCactus);
+                        cactus.remove();
+                    }
+                }, 20);
+
+            }, 1500);
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.code === "Space") {
+                jump();
+            }
+        });
+
+        // Touch support for mobile
+        document.addEventListener("touchstart", function () {
+            jump();
+        });
+    </script>
+</body>
+</html>
